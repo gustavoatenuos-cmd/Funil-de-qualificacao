@@ -396,8 +396,29 @@
         return true;
       }
 
+      // Em web apps Apps Script, a URL pública pode diferir da URL do iframe.
+      // google.script.url lê os parâmetros da URL original da implantação.
+      var tracking = {};
+      (function loadTracking() {
+        var keys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content'];
+        try {
+          var query = new URLSearchParams(window.location.search);
+          keys.forEach(function (key) { tracking[key] = clean(query.get(key)); });
+        } catch (error) {
+          keys.forEach(function (key) { tracking[key] = ''; });
+        }
+
+        if (window.google && google.script && google.script.url && google.script.url.getLocation) {
+          google.script.url.getLocation(function (location) {
+            var params = location && location.parameter ? location.parameter : {};
+            keys.forEach(function (key) {
+              if (params[key]) tracking[key] = clean(params[key]);
+            });
+          });
+        }
+      })();
+
       function data() {
-        var params = new URLSearchParams(window.location.search);
         return {
           nome: clean(document.getElementById('nome').value),
           whatsapp: digits(whatsappField.value),
@@ -406,10 +427,10 @@
           anuncios: document.querySelector('input[name="anuncios"]:checked').value,
           consentimento: document.getElementById('consentimento').checked,
           website: document.getElementById('website').value,
-          utm_source: clean(params.get('utm_source')),
-          utm_medium: clean(params.get('utm_medium')),
-          utm_campaign: clean(params.get('utm_campaign')),
-          utm_content: clean(params.get('utm_content')),
+          utm_source: tracking.utm_source || '',
+          utm_medium: tracking.utm_medium || '',
+          utm_campaign: tracking.utm_campaign || '',
+          utm_content: tracking.utm_content || '',
           origem: clean(document.referrer)
         };
       }
