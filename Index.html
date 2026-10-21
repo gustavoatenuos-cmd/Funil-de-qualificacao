@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <base target="_top">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111d2e">
+  <meta name="description" content="Conte sobre seu negócio em poucos passos e solicite um diagnóstico inicial de crescimento.">
+  <title>Diagnóstico de crescimento | Qualificação</title>
+  <style>
+    :root {
+      --dark: #111d2e;
+      --dark-soft: #1d2c40;
+      --text: #18243a;
+      --muted: #6a7481;
+      --white: #ffffff;
+      --paper: #f6f6f2;
+      --border: #e2e5e7;
+      --accent: #dd6447;
+      --accent-hover: #c9553a;
+      --success: #237452;
+      --shadow: 0 28px 65px rgba(16,29,46,.15);
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--text);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.45;
+    }
+    button, input { font: inherit; }
+    button { cursor: pointer; }
+    [hidden] { display: none !important; }
+    :focus-visible { outline: 3px solid rgba(221,100,71,.55); outline-offset: 3px; }
+    .page { min-height: 100vh; min-height: 100dvh; display: flex; flex-direction: column; }
+    .topbar {
+      width: min(1120px, calc(100% - 48px));
+      margin: 0 auto;
+      min-height: 92px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 13px; letter-spacing: .055em; color: var(--dark); }
+    .brand-mark { display: grid; place-items: center; width: 35px; height: 35px; border-radius: 10px; color: #fff; background: var(--dark); }
+    .brand-mark svg { width: 20px; height: 20px; }
+    .top-tag { color: #69727d; font-size: 12px; font-weight: 600; }
+    .layout {
+      flex: 1;
+      width: min(1120px, calc(100% - 48px));
+      margin: 16px auto 40px;
+      display: grid;
+      grid-template-columns: minmax(0, .94fr) minmax(0, 1.06fr);
+      gap: clamp(36px, 6vw, 90px);
+      align-items: center;
+    }
+    .intro { padding: 34px 0 50px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 800; letter-spacing: .11em; color: var(--accent); text-transform: uppercase; }
+    .eyebrow::before { content: ""; width: 20px; height: 2px; background: currentColor; }
+    .intro h1 { margin: 20px 0 22px; max-width: 600px; font-size: clamp(37px, 4.25vw, 61px); line-height: 1.09; letter-spacing: -.05em; font-weight: 800; }
+    .intro h1 em { color: var(--accent); font-style: normal; }
+    .intro p { max-width: 490px; margin: 0; color: var(--muted); font-size: 17px; line-height: 1.7; }
+    .features { display: grid; gap: 18px; margin-top: 42px; }
+    .feature { display: flex; align-items: flex-start; gap: 14px; font-size: 14px; color: #3e4c5a; }
+    .feature-icon { flex: none; width: 27px; height: 27px; border: 1px solid #ddddd6; border-radius: 50%; display: grid; place-items: center; color: var(--accent); background: #fff; }
+    .feature-icon svg { width: 15px; height: 15px; }
+    .form-card { background: var(--white); padding: clamp(25px, 4vw, 48px); border: 1px solid rgba(20,39,57,.075); border-radius: 22px; box-shadow: var(--shadow); min-height: 506px; }
+    .card-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+    .card-kicker { color: #687584; text-transform: uppercase; letter-spacing: .1em; font-weight: 800; font-size: 11px; }
+    .counter { color: #687584; font-weight: 700; font-size: 13px; white-space: nowrap; }
+    .progress { display: grid; grid-template-columns: repeat(4,1fr); gap: 6px; margin: 18px 0 34px; }
+    .progress-bar { height: 5px; background: #e8ebed; border-radius: 20px; transition: background .25s; }
+    .progress-bar.filled { background: var(--accent); }
+    .step { animation: rise .24s ease both; }
+    @keyframes rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+    .step h2, .success-panel h2 { margin: 0 0 12px; font-size: clamp(25px, 3vw, 32px); line-height: 1.2; letter-spacing: -.035em; }
+    .step .help { color: var(--muted); font-size: 14px; margin: 0 0 28px; }
+    .field { margin-bottom: 18px; }
+    .field label, .choice-title { display: block; font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+    .field input:not([type="checkbox"]) {
+      display: block; width: 100%; min-height: 52px; padding: 13px 15px;
+      border: 1px solid #d9dee3; border-radius: 10px; background: #fff;
+      color: var(--text); font-size: 16px; transition: border-color .16s, box-shadow .16s;
+    }
+    .field input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(221,100,71,.11); }
+    input::placeholder { color: #9aa2ac; }
+    .tiny { display: block; color: #8a929a; font-size: 12px; margin-top: 8px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+    .chip { padding: 8px 11px; border: 1px solid #e3e6e9; background: #fafafa; border-radius: 30px; font-size: 12px; color: #536173; }
+    .chip:hover { border-color: var(--accent); color: var(--text); background: #fff7f4; }
+    .choice-group { display: grid; gap: 12px; margin-bottom: 24px; }
+    .choice { position: relative; display: block; cursor: pointer; }
+    .choice input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+    .choice-body {
+      display: flex; align-items: center; min-height: 66px; gap: 14px;
+      padding: 13px 15px; border: 1px solid #dce1e5; border-radius: 11px;
+      transition: border-color .2s, background .2s, box-shadow .2s;
+    }
+    .choice:hover .choice-body { background: #fcfcfa; border-color: #b9c3cc; }
+    .radio-ring { flex: none; width: 21px; height: 21px; border: 2px solid #b7c0c8; border-radius: 50%; display: grid; place-items: center; }
+    .radio-ring::after { content: ""; display: block; width: 9px; height: 9px; border-radius: 50%; background: #fff; transform: scale(0); transition: transform .2s; }
+    .choice input:checked + .choice-body { border-color: var(--accent); background: #fff8f5; box-shadow: 0 0 0 1px var(--accent); }
+    .choice input:checked + .choice-body .radio-ring { background: var(--accent); border-color: var(--accent); }
+    .choice input:checked + .choice-body .radio-ring::after { transform: scale(1); }
+    .choice input:focus-visible + .choice-body { outline: 3px solid rgba(221,100,71,.5); outline-offset: 3px; }
+    .choice-text { flex: 1; font-weight: 700; font-size: 14px; color: #243246; }
+    .choice-sub { display: block; margin-top: 3px; color: #77838f; font-weight: 400; font-size: 12px; }
+    .consent { display: flex; gap: 10px; align-items: flex-start; color: #6d7782; font-size: 12px; line-height: 1.5; margin: 8px 0 20px; cursor: pointer; }
+    .consent input { accent-color: var(--accent); width: 16px; height: 16px; flex: none; margin: 1px 0 0; }
+    .bottom { display: flex; align-items: center; gap: 12px; margin-top: 25px; }
+    .primary { min-height: 52px; padding: 13px 22px; border: 1px solid var(--accent); background: var(--accent); color: #fff; border-radius: 10px; font-size: 14px; font-weight: 800; flex: 1; transition: background .15s, transform .15s; }
+    .primary:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
+    .primary:active { transform: scale(.995); }
+    .primary:disabled { opacity: .7; cursor: wait; }
+    .back { min-height: 52px; padding: 13px 17px; border: 1px solid var(--border); border-radius: 10px; background: #fff; color: #536274; font-size: 13px; font-weight: 700; }
+    .back:hover { background: #f6f7f7; }
+    .error { padding: 10px 12px; border-radius: 8px; background: #fff1ef; color: #a33c2f; font-size: 13px; margin-top: 18px; }
+    .fineprint { color: #98a0a7; text-align: center; font-size: 11px; margin: 20px 0 0; }
+    .success-panel { text-align: center; padding: 33px 0 22px; }
+    .success-icon { width: 76px; height: 76px; background: #e9f7ee; color: var(--success); border-radius: 50%; display: grid; place-items: center; margin: 0 auto 25px; }
+    .success-panel p { font-size: 15px; color: var(--muted); line-height: 1.7; max-width: 390px; margin: 0 auto 24px; }
+    .success-panel .protocol { display: inline-block; font-size: 12px; padding: 10px 14px; background: #f1f5f5; border-radius: 8px; font-weight: 700; color: #536274; }
+    footer { text-align: center; color: #8a9197; font-size: 12px; padding: 0 24px 28px; }
+    .honeypot { position: absolute; width: 1px; height: 1px; opacity: 0; left: -9999px; pointer-events: none; }
+    @media (max-width: 900px) {
+      .layout { grid-template-columns: 1fr; gap: 22px; margin-top: 0; max-width: 640px; }
+      .intro { padding: 15px 0 10px; }
+      .intro h1 { font-size: clamp(36px, 7vw, 52px); max-width: 540px; margin: 12px 0; }
+      .intro p { font-size: 15px; }
+      .features { display: none; }
+      .form-card { min-height: 470px; }
+    }
+    @media (max-width: 540px) {
+      .topbar { width: calc(100% - 36px); min-height: 70px; }
+      .layout { width: calc(100% - 28px); margin-bottom: 24px; }
+      .intro { padding: 9px 7px 4px; }
+      .intro h1 { font-size: 35px; line-height: 1.12; }
+      .intro p { font-size: 14px; line-height: 1.6; }
+      .form-card { padding: 24px 20px; border-radius: 17px; min-height: 435px; }
+      .step h2 { font-size: 25px; }
+      .progress { margin-bottom: 27px; }
+      .top-tag { display: none; }
+      .choice-body { min-height: 63px; }
+      .bottom { gap: 8px; }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; } }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17 10 11l4 4 6-8"/><path d="M15 7h5v5"/></svg>
+        </span>
+        DIAGNÓSTICO DE CRESCIMENTO
+      </div>
+      <span class="top-tag">Qualificação inicial de negócio</span>
+    </header>
+
+    <main class="layout">
+      <section class="intro" aria-label="Sobre o diagnóstico">
+        <span class="eyebrow">O próximo passo começa aqui</span>
+        <h1>Seu negócio precisa de <em>mais do que anúncios.</em></h1>
+        <p>Para entender o cenário da sua empresa e indicar o próximo passo, precisamos de algumas informações rápidas. Sem formulários intermináveis.</p>
+        <div class="features">
+          <div class="feature">
+            <span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4L19 6"/></svg></span>
+            <span>Perguntas curtas e objetivas sobre sua operação.</span>
+          </div>
+          <div class="feature">
+            <span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4L19 6"/></svg></span>
+            <span>Sem necessidade de conhecer termos técnicos de marketing.</span>
+          </div>
+          <div class="feature">
+            <span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4L19 6"/></svg></span>
+            <span>Contato direcionado de acordo com o estágio do negócio.</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="form-card" aria-label="Formulário de qualificação">
+        <div id="formStage">
+          <div class="card-top">
+            <span class="card-kicker">Vamos entender seu cenário</span>
+            <span class="counter" id="counter" aria-live="polite">01 / 04</span>
+          </div>
+          <div class="progress" id="progress" role="progressbar" aria-label="Progresso do formulário" aria-valuemin="1" aria-valuemax="4" aria-valuenow="1">
+            <span class="progress-bar filled"></span><span class="progress-bar"></span><span class="progress-bar"></span><span class="progress-bar"></span>
+          </div>
+          <form id="leadForm" novalidate>
+            <div class="step" data-step="0">
+              <h2>Primeiro, quem está falando?</h2>
+              <p class="help">Queremos saber com quem vamos conversar.</p>
+              <div class="field">
+                <label for="nome">Seu nome</label>
+                <input id="nome" name="nome" type="text" placeholder="Como podemos te chamar?" autocomplete="name" minlength="2" maxlength="90" required>
+              </div>
+              <div class="field">
+                <label for="whatsapp">Seu WhatsApp com DDD</label>
+                <input id="whatsapp" name="whatsapp" type="tel" inputmode="tel" placeholder="(43) 99999-9999" autocomplete="tel-national" maxlength="16" required>
+                <span class="tiny">Usaremos este número apenas para falar sobre seu diagnóstico.</span>
+              </div>
+              <div class="honeypot" aria-hidden="true">
+                <label for="website">Website</label>
+                <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+              </div>
+            </div>
+
+            <div class="step" data-step="1" hidden>
+              <h2>Qual é o segmento do seu negócio?</h2>
+              <p class="help">Isso nos ajuda a entender o seu tipo de operação.</p>
+              <div class="field">
+                <label for="segmento">Área de atuação</label>
+                <input id="segmento" name="segmento" type="text" list="lista-segmentos" placeholder="Ex.: clínica odontológica" maxlength="100" required>
+                <datalist id="lista-segmentos">
+                  <option value="Saúde e estética"></option>
+                  <option value="Comércio e varejo"></option>
+                  <option value="Alimentação"></option>
+                  <option value="Automotivo"></option>
+                  <option value="Imobiliário"></option>
+                  <option value="Serviços locais"></option>
+                  <option value="Educação"></option>
+                  <option value="E-commerce"></option>
+                </datalist>
+              </div>
+              <span class="tiny">Ou selecione uma sugestão:</span>
+              <div class="chips" aria-label="Sugestões de segmentos">
+                <button class="chip" type="button" data-segment="Saúde e estética">Saúde e estética</button>
+                <button class="chip" type="button" data-segment="Comércio e varejo">Comércio</button>
+                <button class="chip" type="button" data-segment="Alimentação">Alimentação</button>
+                <button class="chip" type="button" data-segment="Serviços locais">Serviços</button>
+              </div>
+            </div>
+
+            <div class="step" data-step="2" hidden>
+              <h2>Seu negócio já está em operação?</h2>
+              <p class="help">Queremos entender se a empresa já atende clientes ou está começando.</p>
+              <div class="choice-group" role="radiogroup" aria-label="O negócio já opera?">
+                <label class="choice">
+                  <input type="radio" name="opera" value="sim">
+                  <span class="choice-body">
+                    <span class="radio-ring" aria-hidden="true"></span>
+                    <span class="choice-text">Sim, já estou operando<span class="choice-sub">Já vendo produtos ou presto serviços.</span></span>
+                  </span>
+                </label>
+                <label class="choice">
+                  <input type="radio" name="opera" value="nao">
+                  <span class="choice-body">
+                    <span class="radio-ring" aria-hidden="true"></span>
+                    <span class="choice-text">Ainda estou estruturando<span class="choice-sub">Estou preparando meu negócio para começar.</span></span>
+                  </span>
+                </label>
+              </div>
+            </div>
+
+            <div class="step" data-step="3" hidden>
+              <h2>Você já investiu em anúncios?</h2>
+              <p class="help">Pode ser no Instagram, Facebook, Google ou outra plataforma.</p>
+              <div class="choice-group" role="radiogroup" aria-label="Histórico de anúncios">
+                <label class="choice">
+                  <input type="radio" name="anuncios" value="atual">
+                  <span class="choice-body"><span class="radio-ring" aria-hidden="true"></span><span class="choice-text">Sim, invisto atualmente</span></span>
+                </label>
+                <label class="choice">
+                  <input type="radio" name="anuncios" value="passado">
+                  <span class="choice-body"><span class="radio-ring" aria-hidden="true"></span><span class="choice-text">Já investi, mas parei</span></span>
+                </label>
+                <label class="choice">
+                  <input type="radio" name="anuncios" value="nunca">
+                  <span class="choice-body"><span class="radio-ring" aria-hidden="true"></span><span class="choice-text">Nunca investi em anúncios</span></span>
+                </label>
+              </div>
+              <label class="consent">
+                <input id="consentimento" type="checkbox" required>
+                <span>Autorizo o uso dos dados enviados para receber um contato por WhatsApp relacionado a este diagnóstico de negócio.</span>
+              </label>
+            </div>
+
+            <div id="formError" class="error" role="alert" hidden></div>
+            <div class="bottom">
+              <button id="backButton" class="back" type="button" hidden>Voltar</button>
+              <button id="nextButton" class="primary" type="submit">Continuar &rarr;</button>
+            </div>
+            <p class="fineprint">Suas respostas são usadas para preparar o contato inicial.</p>
+          </form>
+        </div>
+
+        <div id="successPanel" class="success-panel" hidden aria-live="polite">
+          <div class="success-icon" aria-hidden="true">
+            <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg>
+          </div>
+          <h2>Recebemos suas informações!</h2>
+          <p>Obrigado por compartilhar o momento do seu negócio. Sua solicitação foi registrada para a próxima etapa de atendimento.</p>
+          <div class="protocol">Protocolo <span id="protocolNumber"></span></div>
+        </div>
+      </section>
+    </main>
+    <footer>Diagnóstico inicial • Dados utilizados para contato e qualificação</footer>
+  </div>
+
+  <script>
+    (function () {
+      'use strict';
+
+      var currentStep = 0;
+      var totalSteps = 4;
+      var busy = false;
+      var form = document.getElementById('leadForm');
+      var steps = Array.prototype.slice.call(document.querySelectorAll('[data-step]'));
+      var bars = Array.prototype.slice.call(document.querySelectorAll('.progress-bar'));
+      var errorBox = document.getElementById('formError');
+      var nextButton = document.getElementById('nextButton');
+      var backButton = document.getElementById('backButton');
+      var whatsappField = document.getElementById('whatsapp');
+
+      function clean(value) {
+        return String(value || '').trim();
+      }
+
+      function digits(value) {
+        var onlyNumbers = String(value || '').replace(/\D/g, '');
+        if (onlyNumbers.indexOf('55') === 0 && (onlyNumbers.length === 12 || onlyNumbers.length === 13)) {
+          onlyNumbers = onlyNumbers.slice(2);
+        }
+        return onlyNumbers;
+      }
+
+      function maskPhone(value) {
+        var number = digits(value).slice(0, 11);
+        if (number.length <= 2) return number ? '(' + number : '';
+        if (number.length <= 6) return '(' + number.slice(0, 2) + ') ' + number.slice(2);
+        if (number.length <= 10) {
+          return '(' + number.slice(0, 2) + ') ' + number.slice(2, 6) + '-' + number.slice(6);
+        }
+        return '(' + number.slice(0, 2) + ') ' + number.slice(2, 7) + '-' + number.slice(7);
+      }
+
+      function showError(message) {
+        errorBox.textContent = message;
+        errorBox.hidden = !message;
+      }
+
+      function updateStep() {
+        steps.forEach(function (step, index) { step.hidden = index !== currentStep; });
+        bars.forEach(function (bar, index) { bar.classList.toggle('filled', index <= currentStep); });
+        document.getElementById('counter').textContent =
+          String(currentStep + 1).padStart(2, '0') + ' / 04';
+        document.getElementById('progress').setAttribute('aria-valuenow', String(currentStep + 1));
+        backButton.hidden = currentStep === 0;
+        nextButton.textContent = currentStep === totalSteps - 1 ? 'Solicitar diagnóstico  →' : 'Continuar  →';
+        showError('');
+        if (window.innerWidth < 900) {
+          document.querySelector('.form-card').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+
+      function validateStep() {
+        if (currentStep === 0) {
+          if (clean(document.getElementById('nome').value).length < 2) {
+            showError('Preencha seu nome para continuar.');
+            document.getElementById('nome').focus();
+            return false;
+          }
+          if (!/^\d{10,11}$/.test(digits(whatsappField.value))) {
+            showError('Informe um WhatsApp válido com DDD.');
+            whatsappField.focus();
+            return false;
+          }
+        } else if (currentStep === 1) {
+          if (clean(document.getElementById('segmento').value).length < 2) {
+            showError('Informe o segmento do negócio.');
+            document.getElementById('segmento').focus();
+            return false;
+          }
+        } else if (currentStep === 2) {
+          if (!document.querySelector('input[name="opera"]:checked')) {
+            showError('Selecione uma opção para continuar.');
+            return false;
+          }
+        } else if (currentStep === 3) {
+          if (!document.querySelector('input[name="anuncios"]:checked')) {
+            showError('Conte se você já investiu em anúncios.');
+            return false;
+          }
+          if (!document.getElementById('consentimento').checked) {
+            showError('Autorize o contato para que possamos responder à solicitação.');
+            return false;
+          }
+        }
+        showError('');
+        return true;
+      }
+
+      function data() {
+        var params = new URLSearchParams(window.location.search);
+        return {
+          nome: clean(document.getElementById('nome').value),
+          whatsapp: digits(whatsappField.value),
+          segmento: clean(document.getElementById('segmento').value),
+          opera: document.querySelector('input[name="opera"]:checked').value,
+          anuncios: document.querySelector('input[name="anuncios"]:checked').value,
+          consentimento: document.getElementById('consentimento').checked,
+          website: document.getElementById('website').value,
+          utm_source: clean(params.get('utm_source')),
+          utm_medium: clean(params.get('utm_medium')),
+          utm_campaign: clean(params.get('utm_campaign')),
+          utm_content: clean(params.get('utm_content')),
+          origem: clean(document.referrer)
+        };
+      }
+
+      function setBusy(status) {
+        busy = status;
+        nextButton.disabled = status;
+        backButton.disabled = status;
+        nextButton.textContent = status ? 'Enviando...' : 'Solicitar diagnóstico  →';
+      }
+
+      function showSuccess(response, payload) {
+        document.getElementById('formStage').hidden = true;
+        document.getElementById('successPanel').hidden = false;
+        document.getElementById('protocolNumber').textContent = response.id || 'Confirmado';
+        document.title = 'Solicitação recebida | Diagnóstico';
+        if (Array.isArray(window.dataLayer)) {
+          window.dataLayer.push({
+            event: 'lead_qualificado',
+            lead_id: response.id || '',
+            segmento: payload.segmento,
+            perfil: response.perfil || ''
+          });
+        }
+      }
+
+      function submit() {
+        if (busy) return;
+        if (!(window.google && google.script && google.script.run)) {
+          showError('Este formulário precisa ser aberto pela URL publicada do Google Apps Script para registrar seus dados.');
+          return;
+        }
+
+        var payload = data();
+        setBusy(true);
+        showError('');
+
+        google.script.run
+          .withSuccessHandler(function (response) {
+            setBusy(false);
+            if (response && response.ok) {
+              showSuccess(response, payload);
+            } else {
+              showError('Não conseguimos confirmar o registro. Tente novamente.');
+            }
+          })
+          .withFailureHandler(function (error) {
+            setBusy(false);
+            showError(error && error.message ? error.message : 'Não foi possível enviar. Tente novamente.');
+          })
+          .submitLead(payload);
+      }
+
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        if (busy || !validateStep()) return;
+        if (currentStep < totalSteps - 1) {
+          currentStep += 1;
+          updateStep();
+        } else {
+          submit();
+        }
+      });
+
+      backButton.addEventListener('click', function () {
+        if (busy || currentStep === 0) return;
+        currentStep -= 1;
+        updateStep();
+      });
+
+      whatsappField.addEventListener('input', function () {
+        whatsappField.value = maskPhone(whatsappField.value);
+      });
+
+      document.querySelectorAll('[data-segment]').forEach(function (chip) {
+        chip.addEventListener('click', function () {
+          document.getElementById('segmento').value = chip.getAttribute('data-segment');
+          showError('');
+        });
+      });
+
+      updateStep();
+    })();
+  </script>
+</body>
+</html>
