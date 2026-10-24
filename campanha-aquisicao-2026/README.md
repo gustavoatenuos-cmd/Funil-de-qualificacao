@@ -52,3 +52,27 @@ Não subir a campanha com Pixel incorreto ou WhatsApp sem destino comercial. Um 
 Trocar `motion01` por `motion02` ou `motion03` por criativo.
 
 **Nota:** os arquivos de Google Apps Script na raiz do repositório não foram alterados.
+
+
+## Painel de gestão (acesso protegido)
+
+Endereço: `/gestao.html` dentro do mesmo deployment da Vercel.
+
+Recursos:
+- Login por e-mail e senha com Supabase Authentication;
+- Lista dos até 250 leads mais recentes, com busca e filtro por status;
+- Origem por campanha/criativo e link para WhatsApp individual;
+- Etapas `novo`, `contatado`, `negociacao`, `ganho`, `perdido`;
+- Exportação CSV somente para administradores autenticados.
+
+**Segurança:** a tabela `public.aquisicao_leads_admins` contém apenas IDs de administradores autorizados, vinculados a `auth.users`. Políticas de Row Level Security bloqueiam SELECT e UPDATE dos leads por visitantes e usuários autenticados que não estejam nessa lista. Não há auto-cadastro público no painel nem senha fixa no GitHub.
+
+**Ativação do primeiro administrador:**
+1. Criar ou identificar a conta de acesso do administrador em Supabase → Authentication → Users, no projeto LARKAN 5.0. Preferir envio de convite ou fluxo de definição de senha ao invés de compartilhar senhas.
+2. Autorizar explicitamente somente o UUID do usuário escolhido em `public.aquisicao_leads_admins`.
+3. Testar login, listagem vazia, logout, mudança de etapa e acesso negado com conta não autorizada.
+4. Nunca conceder SELECT dos leads a `anon` nem adicionar políticas `USING (true)` para leitura dos leads.
+5. Não informar dados privados, credenciais nem UUIDs pessoais em issues públicas.
+
+O painel começa sem administradores autorizados por segurança. **Ele não estará acessível para consulta até a liberação da primeira conta.**
+
