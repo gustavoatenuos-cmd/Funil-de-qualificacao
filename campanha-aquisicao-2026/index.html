@@ -1,55 +1,77 @@
 <!doctype html>
 <html lang="pt-BR"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#090d18">
+<meta name="theme-color" content="#f5f7fb">
 <meta name="description" content="Criativos, tráfego e um funil de qualificação para preparar as conversas comerciais da sua empresa.">
 <title>Aquisição Inteligente | Estruture suas conversas comerciais</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#090d18;--card:#172235;--border:#35455e;--white:#f7f9ff;--muted:#b8c7db;--coral:#ff8666;--green:#6ee3ab}
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% 4%,#202e4a 0%,#090d18 64%);color:var(--white);font:15px/1.5 'DM Sans',sans-serif;min-height:100dvh}
-h1,h2,p{margin:0}h1,h2{font-family:Manrope,sans-serif;letter-spacing:-.045em;line-height:1.14}button,input{font:inherit}button{cursor:pointer}button:disabled{opacity:.6;cursor:wait}a{color:inherit}
-.wrap{max-width:920px;margin:auto;padding:0 19px}header{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #33415665;min-height:68px;gap:12px}.brand{font:800 13px Manrope,sans-serif;letter-spacing:-.025em}.brand b{color:var(--coral)}.tagline{color:#93a5bf;font-size:10px;font-weight:800;letter-spacing:.08em}
+
+:root{color-scheme:light;--bg:#f5f7fb;--card:#ffffff;--border:#e1e7ef;--white:#172438;--muted:#586a81;--coral:#b94b36;--green:#247653}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(ellipse at 50% 0%,#e8eff8 0%,#f5f7fb 65%);color:var(--white);font:15px/1.5 'DM Sans',sans-serif;min-height:100dvh}
+h1,h2,p{margin:0}h1,h2{font-family:Manrope,sans-serif;letter-spacing:-.04em;line-height:1.17}button,input{font:inherit}button{cursor:pointer}button:disabled{opacity:.6;cursor:wait}a{color:inherit}
+.wrap{max-width:920px;margin:auto;padding:0 19px}
+header{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #dce4ef;min-height:68px;gap:12px}
+.brand{font:800 13px Manrope,sans-serif;letter-spacing:-.025em;color:#1a2d47}.brand b{color:var(--coral)}
+.tagline{color:#627389;font-size:10px;font-weight:700;letter-spacing:.065em}
 main{min-height:calc(100dvh - 132px)}[hidden]{display:none!important}
 .hero{max-width:650px;text-align:center;margin:auto;padding:46px 0 38px}
-.badge{color:#ffb5a0;background:#352328;border:1px solid #835343;border-radius:28px;padding:8px 13px;display:inline-block;font:800 10px Manrope,sans-serif;letter-spacing:.09em}
-h1{font-size:clamp(34px,6.5vw,54px);font-weight:800;margin:18px 0 13px}h1 em{font-style:normal;color:var(--coral)}
-.sub{color:#c0ccdb;font-size:clamp(14px,2vw,16px);max-width:580px;margin:0 auto 20px;line-height:1.65}
-.diagram{border-radius:20px;border:1px solid #3c4b60;background:linear-gradient(133deg,#1c2b41,#111927);padding:20px 15px 17px;box-shadow:0 22px 60px #0006;position:relative;overflow:hidden;margin-bottom:19px}
-.diagram:before{content:"";position:absolute;inset:0;background-image:linear-gradient(#ffffff04 1px,transparent 1px),linear-gradient(90deg,#ffffff04 1px,transparent 1px);background-size:25px 25px}
-.diagram .caption{color:#a6b8d0;font-size:10px;letter-spacing:.14em;text-align:left;font-weight:800;position:relative}
+.badge{color:#8b4a38;background:#fcf2ed;border:1px solid #edd7ce;border-radius:28px;padding:8px 13px;display:inline-block;font:700 10px Manrope,sans-serif;letter-spacing:.06em}
+h1{font-size:clamp(34px,6.5vw,54px);font-weight:800;margin:18px 0 13px}
+h1 em{font-style:normal;color:var(--coral)}
+.sub{color:#50627a;font-size:clamp(14px,2vw,16px);max-width:580px;margin:0 auto 20px;line-height:1.65}
+.diagram{border-radius:20px;border:1px solid #dce4ee;background:linear-gradient(145deg,#fff,#f5f8fd);padding:20px 15px 17px;box-shadow:0 13px 42px #2539580d;position:relative;overflow:hidden;margin-bottom:19px}
+.diagram:before{content:"";position:absolute;inset:0;background-image:linear-gradient(#91abc510 1px,transparent 1px),linear-gradient(90deg,#91abc510 1px,transparent 1px);background-size:25px 25px}
+.diagram .caption{color:#60748f;font-size:10px;letter-spacing:.1em;text-align:left;font-weight:700;position:relative}
 .nodes{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:19px}
-.nodes:before{content:"";height:3px;position:absolute;background:#7288a4;top:32px;left:18%;right:18%;opacity:.7}
-.node{position:relative;min-width:0}.nodeIcon{border:1px solid #5a749b;width:67px;height:67px;border-radius:18px;display:grid;place-items:center;margin:auto auto 10px;background:#223752;box-shadow:0 12px 30px #0007}
-.nodeIcon svg{width:34px;height:34px;stroke:#a8caff;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
-.node:nth-child(2) .nodeIcon{background:#46302b;border-color:#97634e}.node:nth-child(2) svg{stroke:#ffa785}
-.node:nth-child(3) .nodeIcon{background:#214536;border-color:#44866a}.node:nth-child(3) svg{stroke:#8be6b7}
-.node b{font:800 12px Manrope,sans-serif;display:block}.node small{display:block;font-size:10px;color:#9eafc5;margin-top:4px}
-.dot{position:absolute;z-index:3;background:#ff9e78;box-shadow:0 0 18px #ff8c67;width:11px;height:11px;border-radius:50%;left:18%;top:28px;animation:run 4.5s ease-in-out infinite}
-.dot.second{background:#6de7b2;box-shadow:0 0 18px #60d5a1;animation-delay:1.5s}
+.nodes:before{content:"";height:2px;position:absolute;background:#bbcadc;top:32px;left:18%;right:18%}
+.node{position:relative;min-width:0}
+.nodeIcon{border:1px solid #cadaed;width:67px;height:67px;border-radius:18px;display:grid;place-items:center;margin:auto auto 10px;background:#e8f0fb;box-shadow:0 7px 17px #233a580d}
+.nodeIcon svg{width:34px;height:34px;stroke:#376aaa;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.node:nth-child(2) .nodeIcon{background:#fff1e9;border-color:#f0d2c0}.node:nth-child(2) svg{stroke:#b96345}
+.node:nth-child(3) .nodeIcon{background:#e8f5ed;border-color:#c5e4d1}.node:nth-child(3) svg{stroke:#2c8b62}
+.node b{font:700 12px Manrope,sans-serif;display:block;color:#263953}
+.node small{display:block;font-size:10px;color:#6a7e97;margin-top:4px}
+.dot{position:absolute;z-index:3;background:#ca7056;box-shadow:0 0 10px #cf77594d;width:10px;height:10px;border-radius:50%;left:18%;top:28px;animation:run 4.5s ease-in-out infinite}
+.dot.second{background:#47a57a;box-shadow:0 0 10px #47a57a4d;animation-delay:1.5s}
 @keyframes run{0%,7%{left:18%;opacity:0;transform:scale(.6)}13%{opacity:1}43%{left:49%;opacity:1;transform:scale(1)}68%{left:82%;opacity:1}76%,100%{left:82%;opacity:0;transform:scale(.5)}}
-.diagram-bottom{position:relative;margin-top:17px;font-size:11px;color:#b8c9df}.diagram-bottom strong{color:white}
-.primary{width:100%;background:var(--coral);color:#221a1b;font:800 14px Manrope,sans-serif;min-height:55px;border:0;border-radius:13px;box-shadow:0 10px 28px #ff825e2b}
-.primary:hover{background:#ff9d83}.hint{color:#9cadc5;font-size:11px;margin:11px 0}
-.proofs{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;color:#adbfce;font-size:11px;margin-top:20px}.proofs span:before{content:"✓";color:var(--green);margin-right:7px}
-.wizard{max-width:530px;margin:0 auto;padding:30px 0 50px}.topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px}.back{background:none;border:0;color:#bac8db;font-size:13px;font-weight:700;padding:8px 0}.count{font-weight:800;color:#9eabc0;letter-spacing:.06em;font-size:11px}
-.progress{display:flex;gap:6px;margin-bottom:22px}.progress i{flex:1;height:5px;background:#2a3952;border-radius:4px}.progress i.active{background:var(--coral)}
-.panel{background:linear-gradient(160deg,#1b293e,#111b2b);padding:31px 27px;border:1px solid #394962;border-radius:21px;box-shadow:0 20px 60px #0004}
-.panel h2{font-size:clamp(27px,5vw,35px);margin-bottom:9px}.panel p{font-size:13px;color:#aebed1;margin-bottom:22px}
-.choices{display:grid;gap:10px}.choice{border:1px solid #455573;background:#1b2a40;color:white;text-align:left;min-height:60px;padding:12px 15px;border-radius:12px;font-weight:700;display:flex;align-items:center;justify-content:space-between;gap:9px}
-.choice:hover,.choice:focus-visible{border-color:var(--coral);background:#302934}.choice span:last-child{color:var(--coral);font-size:20px}
-.field{display:block;font-weight:800;font-size:12px;margin:0 0 14px}.field input{display:block;width:100%;background:#0c1626;color:white;border:1px solid #52617a;border-radius:10px;padding:13px;height:52px;margin-top:7px;outline:none}.field input:focus{border-color:var(--coral)}.field input::placeholder{color:#8394af}
-.consent{display:flex;align-items:flex-start;gap:9px;font-size:11px;color:#b3c2d4;margin:13px 0 21px}.consent input{accent-color:var(--coral);width:17px;height:17px;flex-shrink:0;margin:1px 0 0}.consent a{text-decoration:underline}
-.error{display:none;color:#ffb9ae;font-size:12px;margin-top:10px}.error.visible{display:block}
-.success{text-align:center;max-width:510px;margin:auto;padding:76px 0}.check{margin:auto auto 17px;width:68px;height:68px;border-radius:50%;background:#1d4634;color:#83ebba;display:grid;place-items:center;font-size:30px}.success h2{font-size:31px}.success p{color:#bac9d7;font-size:14px;margin:14px auto 18px;line-height:1.6}
-.whatsapp{display:none;background:#55db96;color:#082216;text-decoration:none;padding:16px;border-radius:13px;font-weight:800;margin-top:18px}
-footer{display:flex;justify-content:space-between;align-items:center;gap:16px;border-top:1px solid #34405570;padding:21px 0 32px;font-size:11px;color:#93a6bb}footer a{color:#9db1c5}
+.diagram-bottom{position:relative;margin-top:17px;font-size:11px;color:#64758c}.diagram-bottom strong{color:#344967}
+.node:last-child .nodeIcon:after{content:'R$';position:absolute;right:calc(50% - 48px);top:0;background:#dff3e7;color:#277450;border:1px solid #b8dfc9;font:800 10px Manrope,sans-serif;border-radius:12px;padding:3px 6px;box-shadow:0 3px 10px #17362a12}
+.primary{width:100%;background:var(--coral);color:#fff;font:800 14px Manrope,sans-serif;min-height:55px;border:0;border-radius:12px;box-shadow:0 9px 22px #ad4b2926}
+.primary:hover{background:#a63f2d}
+.primary:focus-visible,.choice:focus-visible,.back:focus-visible,.whatsapp:focus-visible{outline:3px solid #6f9fce;outline-offset:3px}
+.hint{color:#67798f;font-size:11px;margin:11px 0}
+.proofs{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;color:#677a90;font-size:11px;margin-top:20px}
+.proofs span:before{content:"";display:inline-block;width:5px;height:5px;background:#b2c3d5;border-radius:100%;margin:0 7px 2px 0}
+.wizard{max-width:530px;margin:0 auto;padding:30px 0 50px}
+.topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px}
+.back{background:none;border:0;color:#415873;font-size:13px;font-weight:700;padding:8px 0}
+.count{font-weight:700;color:#687e96;letter-spacing:.06em;font-size:11px}
+.progress{display:flex;gap:6px;margin-bottom:22px}.progress i{flex:1;height:5px;background:#e0e7f0;border-radius:4px}.progress i.active{background:#bc644c}
+.panel{background:#fff;padding:31px 27px;border:1px solid #dde5ef;border-radius:21px;box-shadow:0 16px 45px #2037530b}
+.panel h2{font-size:clamp(27px,5vw,35px);margin-bottom:9px;color:#1d2e47}
+.panel p{font-size:13px;color:#60738b;margin-bottom:22px}
+.choices{display:grid;gap:10px}
+.choice{border:1px solid #dae3ee;background:#f9fbfe;color:#273d58;text-align:left;min-height:60px;padding:12px 15px;border-radius:12px;font-weight:600;display:flex;align-items:center;justify-content:space-between;gap:9px}
+.choice:hover,.choice:focus-visible{border-color:#cf927c;background:#fff4ef}
+.field{display:block;font-weight:700;font-size:12px;color:#344961;margin:0 0 14px}
+.field input{display:block;width:100%;background:#fff;color:#1f3048;border:1px solid #cbd7e6;border-radius:10px;padding:13px;height:52px;margin-top:7px;outline:none}
+.field input:focus{border-color:var(--coral);box-shadow:0 0 0 3px #ba543318}
+.field input::placeholder{color:#798ca4}
+.consent{display:flex;align-items:flex-start;gap:9px;font-size:11px;color:#516781;margin:13px 0 21px}.consent input{accent-color:var(--coral);width:17px;height:17px;flex-shrink:0;margin:1px 0 0}.consent a{text-decoration:underline}
+.error{display:none;color:#a52b25;font-size:12px;margin-top:10px}.error.visible{display:block}
+.success{text-align:center;max-width:510px;margin:auto;padding:76px 0}
+.success h2{font-size:31px;color:#20344c}.success p{color:#5e7086;font-size:14px;margin:14px auto 18px;line-height:1.6}
+.whatsapp{display:none;background:#26734e;color:#fff;text-decoration:none;padding:16px;border-radius:12px;font-weight:700;margin-top:18px}
+.whatsapp:hover{background:#1c5d3e}
+footer{display:flex;justify-content:space-between;align-items:center;gap:16px;border-top:1px solid #dbe3ee;padding:21px 0 32px;font-size:11px;color:#71849b}footer a{color:#45607e}
 .honeypot{position:absolute;left:-10000px;width:1px;height:1px}
 @media(max-width:600px){header{min-height:59px}.brand{font-size:12px}.tagline{font-size:9px}.hero{padding:30px 0 27px}h1{font-size:34px}.sub{font-size:14px}.diagram{padding:15px 11px 13px}.nodes{gap:5px;margin-top:17px}.nodeIcon{width:59px;height:59px;border-radius:14px}.nodeIcon svg{width:28px;height:28px}.nodes:before{top:29px}.dot{top:24px}.node b{font-size:11px}.node small{font-size:9px}.panel{padding:24px 19px}.wizard{padding-top:23px}.proofs{gap:9px}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.dot{display:none}}
 
-.node:last-child .nodeIcon:after{content:'R$';position:absolute;right:calc(50% - 48px);top:0;background:#56d494;color:#09251a;border:2px solid #18263a;font:800 10px Manrope,sans-serif;border-radius:12px;padding:3px 6px;box-shadow:0 4px 14px #0007}
 </style>
 <script>
 window.META_PIXEL_ID = '';
@@ -57,29 +79,29 @@ window.COMERCIAL_WHATSAPP = '5543984222822'; // (43) 98422-2822
 if(!/^\d{14,16}$/.test(window.META_PIXEL_ID||'')){window.META_PIXEL_ID=''}
 if(window.META_PIXEL_ID){!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init',window.META_PIXEL_ID);fbq('track','PageView')}
 </script></head><body>
-<div class="wrap"><header><span class="brand">AQUISIÇÃO <b>INTELIGENTE ↗</b></span><span class="tagline">ESTRUTURA PARA EMPRESAS</span></header></div>
+<div class="wrap"><header><span class="brand">AQUISIÇÃO <b>INTELIGENTE</b></span><span class="tagline">ESTRUTURA PARA EMPRESAS</span></header></div>
 <main class="wrap">
 <section id="hero" class="hero">
-<span class="badge">PARA EMPRESAS QUE JÁ TENTARAM ANUNCIAR</span>
+<span class="badge">ESTRUTURA DE AQUISIÇÃO PARA EMPRESAS</span>
 <h1>Seus anúncios geram contatos, mas <em>poucos viram clientes?</em></h1>
-<p class="sub">Estruturamos seus anúncios, funil e qualificação para transformar cliques em <strong>conversas comerciais mais preparadas.</strong></p>
+<p class="sub">Organizamos seus anúncios e o funil de qualificação para que os interessados cheguem ao WhatsApp com <strong>mais contexto sobre seu serviço.</strong></p>
 <div class="diagram" role="img" aria-label="Animação ilustrativa: anúncios levam ao funil de qualificação e ao WhatsApp">
-<div class="caption">A JORNADA DE AQUISIÇÃO</div>
+<div class="caption">COMO FUNCIONA A ESTRUTURA</div>
 <div class="nodes"><i class="dot"></i><i class="dot second"></i>
 <div class="node"><div class="nodeIcon"><svg viewBox="0 0 32 32"><path d="M4 14h6L26 8v16L10 18H4z"/><path d="m10 19 3 8h5l-4-7"/></svg></div><b>Tráfego pago</b><small>Atrair interesse</small></div>
 <div class="node"><div class="nodeIcon"><svg viewBox="0 0 32 32"><path d="M4 6h24L19 17v8l-5 3V17z"/><path d="m10 12 6 4 6-4"/></svg></div><b>Funil</b><small>Qualificar</small></div>
 <div class="node"><div class="nodeIcon"><svg viewBox="0 0 32 32"><path d="M7 23 5 28l6-2a12 12 0 1 0-5-5z"/><path d="m12 12 3 4 6-6"/><path d="M23 20v7M20 23.5h7"/></svg></div><b>WhatsApp</b><small>Conversar melhor</small></div>
-</div><div class="diagram-bottom"><strong>Tráfego → Qualificação → Conversas</strong> com mais contexto.</div></div>
-<button class="primary" id="start" type="button">QUERO ESTRUTURAR MINHA AQUISIÇÃO ↗</button>
-<div class="hint">Implantação com condição especial · Gestão opcional</div>
+</div><div class="diagram-bottom"><strong>Tráfego pago, funil e WhatsApp.</strong> Etapas conectadas até o atendimento.</div></div>
+<button class="primary" id="start" type="button">CONHECER A ESTRUTURA</button>
+<div class="hint">Implantação para sua equipe ou gestão pela nossa equipe.</div>
 <div class="proofs"><span>3 perguntas rápidas</span><span>Sem compromisso</span><span>Para sua operação</span></div>
 </section>
 <section id="wizard" class="wizard" hidden>
-<div class="topbar"><button class="back" id="back" type="button">← Voltar</button><span class="count" id="counter">ETAPA 1 DE 4</span></div>
+<div class="topbar"><button class="back" id="back" type="button">Voltar</button><span class="count" id="counter">ETAPA 1 DE 4</span></div>
 <div class="progress" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
 <div class="panel"><div id="step-body"></div><div id="err" class="error" role="alert"></div></div>
 </section>
-<section id="success" class="success" hidden><div class="check">✓</div><h2>Cadastro recebido!</h2><p id="success-copy">Suas informações foram registradas.</p><a id="whatsapp-open" class="whatsapp" href="#" rel="noopener noreferrer">ABRIR WHATSAPP ↗</a></section>
+<section id="success" class="success" hidden><h2>Cadastro registrado.</h2><p id="success-copy">Suas informações foram registradas.</p><a id="whatsapp-open" class="whatsapp" href="#" rel="noopener noreferrer">ABRIR CONVERSA NO WHATSAPP</a></section>
 </main>
 <div class="wrap"><footer><span>© 2026 Aquisição Inteligente</span><a href="privacidade.html">Aviso de privacidade</a></footer></div>
 <script>
@@ -112,17 +134,17 @@ document.querySelectorAll('.progress i').forEach(function(e,i){e.classList.toggl
 $('err').classList.remove('visible');
 if(step<3){
 var q=questions[step],html='<h2>'+escape(q.title)+'</h2><p>'+escape(q.sub)+'</p><div class="choices">';
-q.answers.forEach(function(a){html+='<button class="choice" type="button" data-value="'+a[0]+'"><span>'+escape(a[1])+'</span><span>→</span></button>'});
+q.answers.forEach(function(a){html+='<button class="choice" type="button" data-value="'+a[0]+'"><span>'+escape(a[1])+'</span></button>'});
 $('step-body').innerHTML=html+'</div>';
 $('step-body').querySelectorAll('[data-value]').forEach(function(btn){btn.addEventListener('click',function(){values[q.key]=btn.getAttribute('data-value');step++;render()})});
 }else{
-$('step-body').innerHTML='<h2>Agora vamos conversar sobre sua empresa.</h2><p>Deixe seus dados para conhecer a condição de implantação.</p><form id="leadform" novalidate>'+
+$('step-body').innerHTML='<h2>Agora vamos conversar sobre sua empresa.</h2><p>Informe seus dados para receber as opções de implantação.</p><form id="leadform" novalidate>'+
 '<label class="field">Seu nome<input id="nome" maxlength="100" autocomplete="name" placeholder="Como podemos chamar você?" required></label>'+
 '<label class="field">Nome da empresa<input id="empresa" maxlength="120" autocomplete="organization" placeholder="Nome do seu negócio" required></label>'+
 '<label class="field">WhatsApp com DDD<input id="telefone" type="tel" inputmode="tel" autocomplete="tel" maxlength="20" placeholder="(43) 99999-9999" required></label>'+
 '<label class="consent"><input id="consent" type="checkbox" required><span>Autorizo contato comercial pelo WhatsApp e li o <a href="privacidade.html" target="_blank" rel="noopener noreferrer">aviso de privacidade</a>.</span></label>'+
 '<input class="honeypot" name="site" id="site" tabindex="-1" autocomplete="off" aria-hidden="true">'+
-'<button id="send" class="primary" type="submit">'+(businessPhone()?'CONTINUAR NO WHATSAPP ↗':'SOLICITAR MINHA PROPOSTA ↗')+'</button></form>';
+'<button id="send" class="primary" type="submit">'+'QUERO MINHA ESTRUTURAÇÃO'+'</button></form>';
 $('leadform').addEventListener('submit',submit);
 }
 show('wizard')
@@ -173,7 +195,7 @@ setTimeout(function(){window.location.assign(link)},1200)
 $('success-copy').textContent='Seu cadastro foi salvo com segurança. Nossa equipe poderá entrar em contato no WhatsApp informado. O redirecionamento automático ainda está em configuração.'
 }
 }catch(e){error('Não foi possível enviar agora. Confira sua internet e tente novamente.')}
-finally{clearTimeout(timeout);busy=false;b.disabled=false;b.textContent=businessPhone()?'CONTINUAR NO WHATSAPP ↗':'SOLICITAR MINHA PROPOSTA ↗'}
+finally{clearTimeout(timeout);busy=false;b.disabled=false;b.textContent='QUERO MINHA ESTRUTURAÇÃO'}
 }
 $('start').addEventListener('click',function(){step=0;render()});
 $('back').addEventListener('click',function(){if(step===0)show('hero');else{step--;render()}});
