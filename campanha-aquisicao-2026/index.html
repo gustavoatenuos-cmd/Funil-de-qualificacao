@@ -1,78 +1,156 @@
 <!doctype html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#090c14">
-<meta name="description" content="Criativos, tráfego pago e um funil de qualificação para conversas comerciais mais preparadas.">
-<title>Aquisição Inteligente | Estruture seu próximo cliente</title>
+<html lang="pt-BR"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#090d18">
+<meta name="description" content="Criativos, tráfego e um funil de qualificação para preparar as conversas comerciais da sua empresa.">
+<title>Aquisição Inteligente | Estruture suas conversas comerciais</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#090c14;--surface:#141a27;--line:#303a4a;--text:#f5f7fd;--sub:#a6b2c4;--accent:#ff7958}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--text);background:var(--bg);font:15px/1.55 'DM Sans',system-ui,sans-serif}h1,h2,h3{font-family:Manrope,system-ui,sans-serif;letter-spacing:-.04em;line-height:1.13;margin:0}a{color:inherit;text-decoration:none}button,input{font:inherit}button{cursor:pointer}button:disabled{opacity:.65;cursor:wait}.shell{max-width:1130px;margin:auto;padding:0 26px}.backdrop{position:absolute;top:40px;right:0;width:50vw;height:650px;background:radial-gradient(ellipse at 70% 30%,rgba(65,110,230,.18),transparent 67%);pointer-events:none}.nav{height:77px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #273042}.brand{font:800 15px Manrope,sans-serif;letter-spacing:-.025em}.brand i{font-style:normal;color:var(--accent)}.nav a:last-child{font-size:12px;border:1px solid #485165;border-radius:10px;padding:11px 15px;font-weight:700}.hero{min-height:575px;padding:65px 0 30px;display:grid;grid-template-columns:1.07fr .93fr;align-items:center;gap:50px;position:relative}.chip{display:inline-block;padding:8px 12px;border-radius:999px;border:1px solid #6c3d3b;background:#2d1e25;color:#ffc0ac;font-size:10px;letter-spacing:.095em;font-weight:800}.hero h1{margin:23px 0;font-size:clamp(38px,4.5vw,62px);font-weight:800}.hero h1 em{font-style:normal;color:var(--accent)}.hero p{font-size:16px;color:#b6c2d1;line-height:1.75;max-width:540px}.button{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:12px;background:var(--accent);color:#161219;font-weight:800;padding:16px 21px;transition:.18s}.button:hover{background:#ff9b82;transform:translateY(-1px)}.hero .button{margin-top:14px}.fine{font-size:12px;color:#9ba9b9;margin-top:13px}.diagram{position:relative;display:flex;flex-direction:column;gap:13px;min-height:400px;justify-content:center}.node{display:flex;gap:13px;align-items:center;border:1px solid #344154;background:linear-gradient(120deg,#1b2434,#101725);border-radius:17px;padding:15px 20px;box-shadow:0 17px 37px #0003;position:relative}.node:nth-child(2){margin-left:29px}.node:nth-child(3){margin-left:58px}.node:nth-child(4){margin-left:86px;border-color:#367158}.symbol{width:44px;height:44px;border-radius:13px;background:#26374c;color:#b2caff;display:grid;place-items:center;font-size:23px;flex-shrink:0}.node:nth-child(2) .symbol{background:#44302e;color:#ffa990}.node:nth-child(3) .symbol{background:#29395b;color:#9cc0ff}.node:nth-child(4) .symbol{background:#25473a;color:#71e6af}.node b{display:block;font-size:14px}.node small{display:block;color:#a2b0c0;font-size:11px;margin-top:3px}.section{padding:57px 0}.section h2{font-size:clamp(28px,3vw,38px)}.section > p{color:#a7b5c6;margin-top:14px;max-width:590px}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:27px 0}.card{padding:23px;border-radius:15px;border:1px solid var(--line);background:#121724}.card strong{color:var(--accent);font:800 11px Manrope;letter-spacing:.08em}.card h3{margin:13px 0;font-size:18px}.card p{color:var(--sub);font-size:13px;margin:0}.pipeline{border:1px solid var(--line);border-radius:16px;padding:20px;display:flex;gap:10px;align-items:center;justify-content:space-around;color:#e2e8f3;flex-wrap:wrap;background:#141b28}.pipeline b{padding:11px 13px;border-radius:8px;border:1px solid #414e62;font-size:12px;white-space:nowrap}.pipeline span{color:var(--accent)}.capture{padding:35px 0 85px}.capture-panel{display:grid;grid-template-columns:.86fr 1.14fr;border:1px solid #39495e;background:linear-gradient(130deg,#192232,#111824);border-radius:23px;overflow:hidden}.intro{padding:40px 34px;border-right:1px solid #334154;display:flex;flex-direction:column;justify-content:center}.intro h2{font-size:clamp(29px,3vw,39px);margin:16px 0}.intro p{color:#aebccb;line-height:1.7}.tick{font-size:13px;margin-top:13px;color:#d6e1ef}.tick:before{content:'✓';color:#79e2b1;margin-right:10px}.formcol{padding:30px 32px}.status{display:flex;justify-content:space-between;color:#c1ccdb;font-size:11px;font-weight:700}.progress{display:flex;gap:7px;margin:11px 0 23px}.progress i{height:5px;flex:1;background:#364252;border-radius:10px}.progress i.current{background:var(--accent)}.step{display:none}.step.on{display:block}.question{margin:19px 0}.question legend{font-weight:800;font-size:13px;margin-bottom:9px}.question fieldset{border:0;padding:0;margin:0}.option{display:block;padding:10px 12px;margin:7px 0;border:1px solid #3c485b;border-radius:9px;background:#202a39;color:#dee7f3;font-size:13px;cursor:pointer}.option:has(input:checked){background:#352b33;border-color:var(--accent)}.option input{accent-color:var(--accent);margin-right:10px}.field{display:block;font-weight:700;font-size:13px;margin-bottom:14px}.field input{display:block;width:100%;background:#101826;border:1px solid #475368;border-radius:9px;height:47px;padding:12px;color:#fff;outline:none;margin-top:7px}.field input:focus{border-color:var(--accent)}.field input::placeholder{color:#7b8b9f}.actions{display:flex;gap:9px;margin-top:21px}.actions .button{flex:1}.secondary{background:transparent;border:1px solid #556178;color:#dae4f4;border-radius:10px;padding:13px}.consent{display:flex;gap:9px;font-size:12px;color:#aab7c8;margin:13px 0;align-items:flex-start}.consent input{accent-color:var(--accent);margin-top:3px}.consent a{text-decoration:underline;text-underline-offset:3px}.error{color:#ffaca5;font-size:12px;margin-top:8px;display:none}.error.visible{display:block}.done{display:none;text-align:center;padding:65px 12px}.done h2{font-size:27px;margin:10px 0}.done p{color:#b1bfce}.footer{border-top:1px solid #252f3e;padding:27px 0 40px;display:flex;justify-content:space-between;gap:13px;font-size:12px;color:#91a0b3}.footer a{text-decoration:underline}.mobile-cta{display:none}
-@media(max-width:870px){.hero{grid-template-columns:1fr;gap:20px;padding-top:47px}.diagram{min-height:360px;max-width:550px}.capture-panel{grid-template-columns:1fr}.intro{border-right:0;border-bottom:1px solid #344154}.cards{grid-template-columns:1fr}}
-@media(max-width:560px){.shell{padding:0 17px}.nav{height:65px}.brand{font-size:12px}.nav a:last-child{font-size:10px;padding:9px}.hero h1{font-size:40px}.hero{padding:42px 0 10px}.hero p{font-size:15px}.hero .button{width:100%}.diagram{min-height:320px}.node{padding:10px 12px;gap:9px}.node:nth-child(2){margin-left:17px}.node:nth-child(3){margin-left:34px}.node:nth-child(4){margin-left:51px}.node b{font-size:12px}.node small{font-size:10px}.symbol{width:37px;height:37px;font-size:17px}.section{padding:37px 0}.card{padding:19px}.pipeline{padding:12px;gap:6px}.pipeline b{font-size:10px;padding:7px}.capture{padding:25px 0 80px}.intro,.formcol{padding:26px 20px}.intro h2{font-size:29px}.footer{padding-bottom:95px}.mobile-cta{display:block;position:fixed;bottom:0;left:0;right:0;background:#090c14ed;border-top:1px solid #39475a;padding:11px 17px calc(11px + env(safe-area-inset-bottom));z-index:10}.mobile-cta .button{width:100%;padding:12px;font-size:13px}.mobile-cta.hidden{display:none}}
-@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+:root{--bg:#090d18;--card:#172235;--border:#35455e;--white:#f7f9ff;--muted:#b8c7db;--coral:#ff8666;--green:#6ee3ab}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% 4%,#202e4a 0%,#090d18 64%);color:var(--white);font:15px/1.5 'DM Sans',sans-serif;min-height:100dvh}
+h1,h2,p{margin:0}h1,h2{font-family:Manrope,sans-serif;letter-spacing:-.045em;line-height:1.14}button,input{font:inherit}button{cursor:pointer}button:disabled{opacity:.6;cursor:wait}a{color:inherit}
+.wrap{max-width:920px;margin:auto;padding:0 19px}header{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #33415665;min-height:68px;gap:12px}.brand{font:800 13px Manrope,sans-serif;letter-spacing:-.025em}.brand b{color:var(--coral)}.tagline{color:#93a5bf;font-size:10px;font-weight:800;letter-spacing:.08em}
+main{min-height:calc(100dvh - 132px)}[hidden]{display:none!important}
+.hero{max-width:650px;text-align:center;margin:auto;padding:46px 0 38px}
+.badge{color:#ffb5a0;background:#352328;border:1px solid #835343;border-radius:28px;padding:8px 13px;display:inline-block;font:800 10px Manrope,sans-serif;letter-spacing:.09em}
+h1{font-size:clamp(34px,6.5vw,54px);font-weight:800;margin:18px 0 13px}h1 em{font-style:normal;color:var(--coral)}
+.sub{color:#c0ccdb;font-size:clamp(14px,2vw,16px);max-width:580px;margin:0 auto 20px;line-height:1.65}
+.diagram{border-radius:20px;border:1px solid #3c4b60;background:linear-gradient(133deg,#1c2b41,#111927);padding:20px 15px 17px;box-shadow:0 22px 60px #0006;position:relative;overflow:hidden;margin-bottom:19px}
+.diagram:before{content:"";position:absolute;inset:0;background-image:linear-gradient(#ffffff04 1px,transparent 1px),linear-gradient(90deg,#ffffff04 1px,transparent 1px);background-size:25px 25px}
+.diagram .caption{color:#a6b8d0;font-size:10px;letter-spacing:.14em;text-align:left;font-weight:800;position:relative}
+.nodes{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:19px}
+.nodes:before{content:"";height:3px;position:absolute;background:#7288a4;top:32px;left:18%;right:18%;opacity:.7}
+.node{position:relative;min-width:0}.nodeIcon{border:1px solid #5a749b;width:67px;height:67px;border-radius:18px;display:grid;place-items:center;margin:auto auto 10px;background:#223752;box-shadow:0 12px 30px #0007}
+.nodeIcon svg{width:34px;height:34px;stroke:#a8caff;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.node:nth-child(2) .nodeIcon{background:#46302b;border-color:#97634e}.node:nth-child(2) svg{stroke:#ffa785}
+.node:nth-child(3) .nodeIcon{background:#214536;border-color:#44866a}.node:nth-child(3) svg{stroke:#8be6b7}
+.node b{font:800 12px Manrope,sans-serif;display:block}.node small{display:block;font-size:10px;color:#9eafc5;margin-top:4px}
+.dot{position:absolute;z-index:3;background:#ff9e78;box-shadow:0 0 18px #ff8c67;width:11px;height:11px;border-radius:50%;left:18%;top:28px;animation:run 4.5s ease-in-out infinite}
+.dot.second{background:#6de7b2;box-shadow:0 0 18px #60d5a1;animation-delay:1.5s}
+@keyframes run{0%,7%{left:18%;opacity:0;transform:scale(.6)}13%{opacity:1}43%{left:49%;opacity:1;transform:scale(1)}68%{left:82%;opacity:1}76%,100%{left:82%;opacity:0;transform:scale(.5)}}
+.diagram-bottom{position:relative;margin-top:17px;font-size:11px;color:#b8c9df}.diagram-bottom strong{color:white}
+.primary{width:100%;background:var(--coral);color:#221a1b;font:800 14px Manrope,sans-serif;min-height:55px;border:0;border-radius:13px;box-shadow:0 10px 28px #ff825e2b}
+.primary:hover{background:#ff9d83}.hint{color:#9cadc5;font-size:11px;margin:11px 0}
+.proofs{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;color:#adbfce;font-size:11px;margin-top:20px}.proofs span:before{content:"✓";color:var(--green);margin-right:7px}
+.wizard{max-width:530px;margin:0 auto;padding:30px 0 50px}.topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px}.back{background:none;border:0;color:#bac8db;font-size:13px;font-weight:700;padding:8px 0}.count{font-weight:800;color:#9eabc0;letter-spacing:.06em;font-size:11px}
+.progress{display:flex;gap:6px;margin-bottom:22px}.progress i{flex:1;height:5px;background:#2a3952;border-radius:4px}.progress i.active{background:var(--coral)}
+.panel{background:linear-gradient(160deg,#1b293e,#111b2b);padding:31px 27px;border:1px solid #394962;border-radius:21px;box-shadow:0 20px 60px #0004}
+.panel h2{font-size:clamp(27px,5vw,35px);margin-bottom:9px}.panel p{font-size:13px;color:#aebed1;margin-bottom:22px}
+.choices{display:grid;gap:10px}.choice{border:1px solid #455573;background:#1b2a40;color:white;text-align:left;min-height:60px;padding:12px 15px;border-radius:12px;font-weight:700;display:flex;align-items:center;justify-content:space-between;gap:9px}
+.choice:hover,.choice:focus-visible{border-color:var(--coral);background:#302934}.choice span:last-child{color:var(--coral);font-size:20px}
+.field{display:block;font-weight:800;font-size:12px;margin:0 0 14px}.field input{display:block;width:100%;background:#0c1626;color:white;border:1px solid #52617a;border-radius:10px;padding:13px;height:52px;margin-top:7px;outline:none}.field input:focus{border-color:var(--coral)}.field input::placeholder{color:#8394af}
+.consent{display:flex;align-items:flex-start;gap:9px;font-size:11px;color:#b3c2d4;margin:13px 0 21px}.consent input{accent-color:var(--coral);width:17px;height:17px;flex-shrink:0;margin:1px 0 0}.consent a{text-decoration:underline}
+.error{display:none;color:#ffb9ae;font-size:12px;margin-top:10px}.error.visible{display:block}
+.success{text-align:center;max-width:510px;margin:auto;padding:76px 0}.check{margin:auto auto 17px;width:68px;height:68px;border-radius:50%;background:#1d4634;color:#83ebba;display:grid;place-items:center;font-size:30px}.success h2{font-size:31px}.success p{color:#bac9d7;font-size:14px;margin:14px auto 18px;line-height:1.6}
+.whatsapp{display:none;background:#55db96;color:#082216;text-decoration:none;padding:16px;border-radius:13px;font-weight:800;margin-top:18px}
+footer{display:flex;justify-content:space-between;align-items:center;gap:16px;border-top:1px solid #34405570;padding:21px 0 32px;font-size:11px;color:#93a6bb}footer a{color:#9db1c5}
+.honeypot{position:absolute;left:-10000px;width:1px;height:1px}
+@media(max-width:600px){header{min-height:59px}.brand{font-size:12px}.tagline{font-size:9px}.hero{padding:30px 0 27px}h1{font-size:34px}.sub{font-size:14px}.diagram{padding:15px 11px 13px}.nodes{gap:5px;margin-top:17px}.nodeIcon{width:59px;height:59px;border-radius:14px}.nodeIcon svg{width:28px;height:28px}.nodes:before{top:29px}.dot{top:24px}.node b{font-size:11px}.node small{font-size:9px}.panel{padding:24px 19px}.wizard{padding-top:23px}.proofs{gap:9px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.dot{display:none}}
 </style>
 <script>
-window.META_PIXEL_ID=''; // Preencher com Pixel ID validado antes da campanha
+window.META_PIXEL_ID = '';
+window.COMERCIAL_WHATSAPP = '';
+if(/^\d{14,16}$/.test(window.META_PIXEL_ID||'')){window.META_PIXEL_ID=''}
 if(window.META_PIXEL_ID){!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init',window.META_PIXEL_ID);fbq('track','PageView')}
-</script>
-</head>
-<body>
-<div class="backdrop"></div>
-<div class="shell"><header class="nav"><a class="brand" href="#topo">AQUISIÇÃO <i>INTELIGENTE</i> ↗</a><a href="#cadastro">Conhecer a implantação →</a></header></div>
-<main id="topo"><div class="shell"><section class="hero">
-<div><span class="chip">PARA EMPRESÁRIOS QUE QUEREM VENDER MELHOR</span><h1>Seu anúncio atrai.<br><em>Seu funil prepara a conversa.</em></h1>
-<p>Seu WhatsApp recebe contatos que perguntam tudo do zero? Estruturamos criativos, tráfego e qualificação para que sua equipe converse com pessoas que já entendem melhor sua oferta.</p>
-<a href="#cadastro" class="button">Quero estruturar minha aquisição ↗</a><div class="fine">Implantação para sua equipe operar ou gestão contínua.</div></div>
-<div class="diagram" aria-label="Fluxo de aquisição de clientes">
-<div class="node"><div class="symbol">✦</div><div><b>Criativo estratégico</b><small>A mensagem certa para despertar interesse</small></div></div>
-<div class="node"><div class="symbol">↗</div><div><b>Campanhas Meta Ads</b><small>Distribuição para público relevante</small></div></div>
-<div class="node"><div class="symbol">☷</div><div><b>Funil de qualificação</b><small>Oferta, contexto e perguntas rápidas</small></div></div>
-<div class="node"><div class="symbol">✓</div><div><b>WhatsApp com contexto</b><small>Conversas comerciais mais preparadas</small></div></div>
-</div></section>
-<section class="section"><span class="chip">TRÊS PILARES, UMA OPERAÇÃO</span><h2 style="margin-top:17px">Mais do que anunciar.<br>Uma jornada de aquisição.</h2><p>Conectamos o que acontece entre o primeiro anúncio e o início do atendimento comercial.</p>
-<div class="cards"><div class="card"><strong>01 / ATRAIR</strong><h3>Criativos estratégicos</h3><p>Comunicação clara para apresentar o valor do seu serviço e despertar o interesse adequado.</p></div><div class="card"><strong>02 / DISTRIBUIR</strong><h3>Tráfego pago</h3><p>Campanhas organizadas, segmentação e acompanhamento de indicadores.</p></div><div class="card"><strong>03 / QUALIFICAR</strong><h3>Funil de aquisição</h3><p>Uma etapa rápida que informa e entende a necessidade antes de levar ao WhatsApp.</p></div></div>
-<div class="pipeline"><b>ANÚNCIO</b><span>→</span><b>OFERTA</b><span>→</span><b>QUALIFICAÇÃO</b><span>→</span><b>WHATSAPP</b></div></section></div>
-<section class="capture" id="cadastro"><div class="shell"><div class="capture-panel">
-<div class="intro"><span class="chip">CONDIÇÃO ESPECIAL DE IMPLANTAÇÃO</span><h2>Vamos estruturar a aquisição do seu negócio?</h2><p>Responda três perguntas rápidas. Nossa conversa já começa entendendo seu cenário, sem uma apresentação genérica.</p><div class="tick">Implantação para sua equipe operar</div><div class="tick">Ou implantação com gestão contínua</div><div class="tick">Primeira conversa sem compromisso</div></div>
-<div class="formcol"><div id="formzone"><div class="status"><strong id="label">Entenda seu momento</strong><span id="count">ETAPA 1 DE 2</span></div><div class="progress"><i class="current"></i><i id="second-progress"></i></div>
-<form id="f" novalidate><div class="step on" id="step-one">
-<div class="question"><fieldset><legend>Já investiu em anúncios?</legend><label class="option"><input type="radio" name="ja_anunciou" value="atualmente">Sim, anuncio atualmente</label><label class="option"><input type="radio" name="ja_anunciou" value="antes">Já anunciei, mas parei</label><label class="option"><input type="radio" name="ja_anunciou" value="nunca">Ainda não comecei</label></fieldset></div>
-<div class="question"><fieldset><legend>Qual seu maior desafio?</legend><label class="option"><input type="radio" name="gargalo" value="leads_desqualificados">Recebo contatos que não avançam</label><label class="option"><input type="radio" name="gargalo" value="poucos_contatos">Preciso atrair mais interessados</label><label class="option"><input type="radio" name="gargalo" value="sem_estrutura">Não tenho um funil organizado</label><label class="option"><input type="radio" name="gargalo" value="outro">Quero melhorar toda a operação</label></fieldset></div>
-<div class="question"><fieldset><legend>Como deseja operar?</legend><label class="option"><input type="radio" name="modalidade" value="implantar">Implantar para minha equipe operar</label><label class="option"><input type="radio" name="modalidade" value="gestao">Implantação com gestão contínua</label><label class="option"><input type="radio" name="modalidade" value="avaliar">Quero entender as opções</label></fieldset></div>
-<button type="button" class="button" style="width:100%" id="next">Continuar →</button><div class="error" id="err1" role="alert">Responda às três perguntas para continuar.</div></div>
-<div class="step" id="step-two"><label class="field">Seu nome<input id="nome" maxlength="100" autocomplete="name" placeholder="Como podemos chamar você?"></label><label class="field">Nome da empresa<input id="empresa" maxlength="120" autocomplete="organization" placeholder="Nome do seu negócio"></label><label class="field">Área de atuação<input id="segmento" maxlength="100" placeholder="Ex.: clínica, loja, serviços..."></label><label class="field">WhatsApp com DDD<input id="whatsapp" type="tel" inputmode="tel" maxlength="20" autocomplete="tel" placeholder="(43) 99999-9999"></label><label class="consent"><input id="consent" type="checkbox"><span>Autorizo contato comercial pelo WhatsApp sobre a implantação e li o <a href="privacidade.html" target="_blank" rel="noopener">aviso de privacidade</a>.</span></label><input id="website" style="position:absolute;left:-9999px" tabindex="-1" autocomplete="off" aria-hidden="true"><div class="actions"><button type="button" id="back" class="secondary">Voltar</button><button type="submit" class="button" id="submit">Quero conhecer a proposta →</button></div><div class="error" id="err2" role="alert"></div></div></form></div>
-<div id="done" class="done" role="status"><div style="font-size:55px;color:#6de4aa">✓</div><h2>Cadastro recebido!</h2><p>Obrigado pelo interesse. Nossa equipe vai analisar suas informações e falar com você pelo WhatsApp informado.</p></div></div>
-</div></div></section></main>
-<div class="shell"><footer class="footer"><span>© 2026 — Aquisição Inteligente</span><a href="privacidade.html">Aviso de privacidade</a></footer></div>
-<div class="mobile-cta" id="mobile-cta"><a class="button" href="#cadastro">Quero conhecer a implantação ↗</a></div>
+</script></head><body>
+<div class="wrap"><header><span class="brand">AQUISIÇÃO <b>INTELIGENTE ↗</b></span><span class="tagline">ESTRUTURA PARA EMPRESAS</span></header></div>
+<main class="wrap">
+<section id="hero" class="hero">
+<span class="badge">PARA EMPRESAS QUE JÁ TENTARAM ANUNCIAR</span>
+<h1>Seus anúncios geram contatos, mas <em>poucos viram clientes?</em></h1>
+<p class="sub">Estruturamos seus anúncios, funil e qualificação para transformar cliques em <strong>conversas comerciais mais preparadas.</strong></p>
+<div class="diagram" role="img" aria-label="Animação ilustrativa: anúncios levam ao funil de qualificação e ao WhatsApp">
+<div class="caption">A JORNADA DE AQUISIÇÃO</div>
+<div class="nodes"><i class="dot"></i><i class="dot second"></i>
+<div class="node"><div class="nodeIcon"><svg viewBox="0 0 32 32"><path d="M4 14h6L26 8v16L10 18H4z"/><path d="m10 19 3 8h5l-4-7"/></svg></div><b>Tráfego pago</b><small>Atrair interesse</small></div>
+<div class="node"><div class="nodeIcon"><svg viewBox="0 0 32 32"><path d="M4 6h24L19 17v8l-5 3V17z"/><path d="m10 12 6 4 6-4"/></svg></div><b>Funil</b><small>Qualificar</small></div>
+<div class="node"><div class="nodeIcon"><svg viewBox="0 0 32 32"><path d="M7 23 5 28l6-2a12 12 0 1 0-5-5z"/><path d="m12 12 3 4 6-6"/><path d="M23 20v7M20 23.5h7"/></svg></div><b>WhatsApp</b><small>Conversar melhor</small></div>
+</div><div class="diagram-bottom"><strong>Tráfego → Qualificação → Conversas</strong> com mais contexto.</div></div>
+<button class="primary" id="start" type="button">QUERO ESTRUTURAR MINHA AQUISIÇÃO ↗</button>
+<div class="hint">Implantação com condição especial · Gestão opcional</div>
+<div class="proofs"><span>3 perguntas rápidas</span><span>Sem compromisso</span><span>Para sua operação</span></div>
+</section>
+<section id="wizard" class="wizard" hidden>
+<div class="topbar"><button class="back" id="back" type="button">← Voltar</button><span class="count" id="counter">ETAPA 1 DE 4</span></div>
+<div class="progress" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+<div class="panel"><div id="step-body"></div><div id="err" class="error" role="alert"></div></div>
+</section>
+<section id="success" class="success" hidden><div class="check">✓</div><h2>Cadastro recebido!</h2><p id="success-copy">Suas informações foram registradas.</p><a id="whatsapp-open" class="whatsapp" href="#" rel="noopener noreferrer">ABRIR WHATSAPP ↗</a></section>
+</main>
+<div class="wrap"><footer><span>© 2026 Aquisição Inteligente</span><a href="privacidade.html">Aviso de privacidade</a></footer></div>
 <script>
 (function(){
 'use strict';
-const $=id=>document.getElementById(id),f=$('f');
-const endpoint='https://maflnhhbvxsztrpobtuw.supabase.co/rest/v1/leads_canal_aquisicao_2026';
-const key='sb_publishable_lJ7Lsye0XZmPR0ncxCY2Vg_Sp2hYe2I'; // apenas chave pública; RLS habilitada
-const params=new URLSearchParams(location.search),track=['utm_source','utm_medium','utm_campaign','utm_content','utm_term','fbclid','gclid'];
-track.forEach(k=>{const v=params.get(k);if(v)sessionStorage.setItem('aquisicao_'+k,v.slice(0,250))});
-const answer=n=>f.querySelector('input[name="'+n+'"]:checked')?.value||'';
-function go(n){$('step-one').classList.toggle('on',n===1);$('step-two').classList.toggle('on',n===2);$('second-progress').classList.toggle('current',n===2);$('label').textContent=n===1?'Entenda seu momento':'Seus dados de contato';$('count').textContent='ETAPA '+n+' DE 2';$('cadastro').scrollIntoView({behavior:'smooth',block:'start'})}
-$('next').onclick=()=>{if(!['ja_anunciou','gargalo','modalidade'].every(answer)){$('err1').classList.add('visible');return}$('err1').classList.remove('visible');go(2)};
-$('back').onclick=()=>go(1);
-const normalize=s=>{let v=s.replace(/\D/g,'');if(v.startsWith('55')&&v.length>=12)v=v.slice(2);return v.length>=10&&v.length<=11?'+55'+v:''};
-f.onsubmit=async e=>{e.preventDefault();const name=$('nome').value.trim(),emp=$('empresa').value.trim(),segment=$('segmento').value.trim(),phone=normalize($('whatsapp').value);
-const err=$('err2');err.classList.remove('visible');
-if(name.length<2||emp.length<2||segment.length<2||!phone||!$('consent').checked){err.textContent='Confira seus dados, telefone com DDD e a autorização de contato.';err.classList.add('visible');return}
-if($('website').value)return;
-const lead={nome:name,empresa:emp,segmento:segment,whatsapp:phone,ja_anunciou:answer('ja_anunciou'),gargalo:answer('gargalo'),modalidade:answer('modalidade'),consentimento:true,pagina:location.pathname.slice(0,250)};
-track.forEach(k=>lead[k]=(sessionStorage.getItem('aquisicao_'+k)||'').slice(0,k==='fbclid'||k==='gclid'?250:180)||null);
-const b=$('submit');b.disabled=true;b.textContent='Enviando...';
-try{const ctr=new AbortController(),timeout=setTimeout(()=>ctr.abort(),12000);let result;try{result=await fetch(endpoint,{method:'POST',headers:{'apikey':key,'Content-Type':'application/json','Prefer':'return=minimal'},body:JSON.stringify(lead),signal:ctr.signal})}finally{clearTimeout(timeout)}
-if(!result.ok)throw Error('Erro ao salvar');$('formzone').style.display='none';$('done').style.display='block';$('mobile-cta').classList.add('hidden');
-window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'lead_qualificado',modalidade:lead.modalidade,origem:'meta_aquisicao'});if(typeof fbq==='function')fbq('track','Lead');
-}catch(ex){err.textContent='Não conseguimos registrar agora. Verifique sua conexão e tente novamente.';err.classList.add('visible')}
-finally{b.disabled=false;b.textContent='Quero conhecer a proposta →'};
-};
+var db='https://maflnhhbvxsztrpobtuw.supabase.co/rest/v1/leads_canal_aquisicao_2026';
+var apikey='sb_publishable_lJ7Lsye0XZmPR0ncxCY2Vg_Sp2hYe2I';
+var questions=[
+{key:'ja_anunciou',title:'Você já investe em anúncios?',sub:'Isso ajuda a entender o momento da sua empresa.',answers:[['atualmente','Sim, anuncio atualmente'],['antes','Já investi e parei'],['nunca','Ainda não comecei']]},
+{key:'gargalo',title:'Qual é o maior desafio da sua empresa?',sub:'Selecione a situação que mais se parece com seu negócio.',answers:[['leads_desqualificados','Recebo contatos, mas poucos avançam'],['poucos_contatos','Preciso atrair mais interessados'],['sem_estrutura','Não tenho um funil estruturado'],['outro','Quero organizar toda a aquisição']]},
+{key:'modalidade',title:'Como prefere operar a estrutura?',sub:'Podemos implantar para sua equipe ou acompanhar a gestão.',answers:[['implantar','Implantação para minha equipe operar'],['gestao','Implantação com gestão contínua'],['avaliar','Quero entender qual opção é melhor']]}
+];
+var $=function(id){return document.getElementById(id)},step=0,values={},busy=false,saved=false;
+var u=new URLSearchParams(location.search),keys=['utm_source','utm_medium','utm_campaign','utm_content','utm_term','fbclid','gclid'];
+keys.forEach(function(k){var v=u.get(k);if(v){try{sessionStorage.setItem('funil_'+k,v.slice(0,250))}catch(e){}}});
+function show(id){['hero','wizard','success'].forEach(function(s){$(s).hidden=s!==id});window.scrollTo(0,0)}
+function businessPhone(){return /^55\d{10,11}$/.test(window.COMERCIAL_WHATSAPP||'')}
+function escape(s){return String(s).replace(/[&<>"']/g,function(k){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[k]})}
+function render(){
+$('counter').textContent='ETAPA '+(step+1)+' DE 4';
+document.querySelectorAll('.progress i').forEach(function(e,i){e.classList.toggle('active',i<=step)});
+$('err').classList.remove('visible');
+if(step<3){
+var q=questions[step],html='<h2>'+escape(q.title)+'</h2><p>'+escape(q.sub)+'</p><div class="choices">';
+q.answers.forEach(function(a){html+='<button class="choice" type="button" data-value="'+a[0]+'"><span>'+escape(a[1])+'</span><span>→</span></button>'});
+$('step-body').innerHTML=html+'</div>';
+$('step-body').querySelectorAll('[data-value]').forEach(function(btn){btn.addEventListener('click',function(){values[q.key]=btn.getAttribute('data-value');step++;render()})});
+}else{
+$('step-body').innerHTML='<h2>Agora vamos conversar sobre sua empresa.</h2><p>Deixe seus dados para conhecer a condição de implantação.</p><form id="leadform" novalidate>'+
+'<label class="field">Seu nome<input id="nome" maxlength="100" autocomplete="name" placeholder="Como podemos chamar você?" required></label>'+
+'<label class="field">Nome da empresa<input id="empresa" maxlength="120" autocomplete="organization" placeholder="Nome do seu negócio" required></label>'+
+'<label class="field">WhatsApp com DDD<input id="telefone" type="tel" inputmode="tel" autocomplete="tel" maxlength="20" placeholder="(43) 99999-9999" required></label>'+
+'<label class="consent"><input id="consent" type="checkbox" required><span>Autorizo contato comercial pelo WhatsApp e li o <a href="privacidade.html" target="_blank" rel="noopener noreferrer">aviso de privacidade</a>.</span></label>'+
+'<input class="honeypot" name="site" id="site" tabindex="-1" autocomplete="off" aria-hidden="true">'+
+'<button id="send" class="primary" type="submit">'+(businessPhone()?'CONTINUAR NO WHATSAPP ↗':'SOLICITAR MINHA PROPOSTA ↗')+'</button></form>';
+$('leadform').addEventListener('submit',submit);
+}
+show('wizard')
+}
+function normalize(p){var n=p.replace(/\D/g,'');if(n.indexOf('55')===0&&n.length>=12)n=n.slice(2);return n.length>=10&&n.length<=11?'+55'+n:''}
+function error(msg){$('err').textContent=msg;$('err').classList.add('visible')}
+function readable(key,value){var q=questions.find(function(x){return x.key===key});return (q.answers.find(function(x){return x[0]===value})||['',''])[1]}
+function createWhatsApp(lead){
+var text=['Olá! Vim pelo anúncio da estrutura de aquisição.','','Meu nome é '+lead.nome+' e minha empresa é '+lead.empresa+'.','Já investi em anúncios: '+readable('ja_anunciou',lead.ja_anunciou)+'.','Meu desafio: '+readable('gargalo',lead.gargalo)+'.','Tenho interesse em: '+readable('modalidade',lead.modalidade)+'.','','Gostaria de entender como funciona a implantação.'].join('\n');
+return 'https://wa.me/'+window.COMERCIAL_WHATSAPP+'?text='+encodeURIComponent(text)
+}
+async function submit(ev){
+ev.preventDefault();if(busy||saved)return;if($('site').value)return;
+var nome=$('nome').value.trim(),empresa=$('empresa').value.trim(),tel=normalize($('telefone').value);
+if(nome.length<2||empresa.length<2||!tel||!$('consent').checked){error('Confira nome, empresa, telefone com DDD e consentimento.');return}
+var lead={nome:nome.slice(0,100),empresa:empresa.slice(0,120),whatsapp:tel,segmento:'Não informado',ja_anunciou:values.ja_anunciou,gargalo:values.gargalo,modalidade:values.modalidade,consentimento:true,pagina:location.pathname.slice(0,250)};
+keys.forEach(function(k){var v='';try{v=sessionStorage.getItem('funil_'+k)||''}catch(e){}lead[k]=v?v.slice(0,k==='fbclid'||k==='gclid'?250:180):null});
+var b=$('send'),abort=new AbortController(),timeout=setTimeout(function(){abort.abort()},14000);
+busy=true;b.disabled=true;b.textContent='REGISTRANDO CADASTRO...';
+try{
+var r=await fetch(db,{method:'POST',headers:{'apikey':apikey,'Content-Type':'application/json','Prefer':'return=minimal'},body:JSON.stringify(lead),signal:abort.signal});
+if(!r.ok)throw Error('save_failed');
+saved=true;
+window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'lead_qualificado',modalidade:lead.modalidade,origem:'meta_aquisicao'});
+if(typeof window.fbq==='function')window.fbq('track','Lead');
+show('success');
+if(businessPhone()){
+var link=createWhatsApp(lead);$('whatsapp-open').href=link;$('whatsapp-open').style.display='block';
+$('success-copy').textContent='Seu cadastro foi registrado. Vamos abrir o WhatsApp com suas respostas para facilitar a conversa.';
+window.dataLayer.push({event:'whatsapp_redirecionamento',origem:'meta_aquisicao'});
+setTimeout(function(){window.location.assign(link)},800)
+}else{
+$('success-copy').textContent='Seu cadastro foi salvo com segurança. Nossa equipe poderá entrar em contato no WhatsApp informado. O redirecionamento automático ainda está em configuração.'
+}
+}catch(e){error('Não foi possível enviar agora. Confira sua internet e tente novamente.')}
+finally{clearTimeout(timeout);busy=false;b.disabled=false;b.textContent=businessPhone()?'CONTINUAR NO WHATSAPP ↗':'SOLICITAR MINHA PROPOSTA ↗'}
+}
+$('start').addEventListener('click',function(){step=0;render()});
+$('back').addEventListener('click',function(){if(step===0)show('hero');else{step--;render()}});
 })();
-</script>
-</body></html>
+</script></body></html>
