@@ -61,7 +61,7 @@ h1 em{font-style:normal;color:var(--coral)}
 .field input{display:block;width:100%;background:#fff;color:#1f3048;border:1px solid #cbd7e6;border-radius:10px;padding:13px;height:52px;margin-top:7px;outline:none}
 .field input:focus{border-color:var(--coral);box-shadow:0 0 0 3px #ba543318}
 .field input::placeholder{color:#798ca4}
-.consent{display:flex;align-items:flex-start;gap:9px;font-size:11px;color:#516781;margin:13px 0 21px}.consent input{accent-color:var(--coral);width:17px;height:17px;flex-shrink:0;margin:1px 0 0}.consent a{text-decoration:underline}
+.privacy-note{font-size:11px;color:#516781;line-height:1.55;margin:12px 0 19px}.privacy-note a{text-decoration:underline;text-underline-offset:2px}
 .error{display:none;color:#a52b25;font-size:12px;margin-top:10px}.error.visible{display:block}
 .success{text-align:center;max-width:510px;margin:auto;padding:76px 0}
 .success h2{font-size:31px;color:#20344c}.success p{color:#5e7086;font-size:14px;margin:14px auto 18px;line-height:1.6}
@@ -142,7 +142,7 @@ $('step-body').innerHTML='<h2>Agora vamos conversar sobre sua empresa.</h2><p>In
 '<label class="field">Seu nome<input id="nome" maxlength="100" autocomplete="name" placeholder="Como podemos chamar você?" required></label>'+
 '<label class="field">Nome da empresa<input id="empresa" maxlength="120" autocomplete="organization" placeholder="Nome do seu negócio" required></label>'+
 '<label class="field">WhatsApp com DDD<input id="telefone" type="tel" inputmode="tel" autocomplete="tel" maxlength="20" placeholder="(43) 99999-9999" required></label>'+
-'<label class="consent"><input id="consent" type="checkbox" required><span>Autorizo contato comercial pelo WhatsApp e li o <a href="privacidade.html" target="_blank" rel="noopener noreferrer">aviso de privacidade</a>.</span></label>'+
+'<p class="privacy-note">Seus dados serão utilizados para responder à sua solicitação e entrar em contato sobre a estruturação. <a href="privacidade.html" target="_blank" rel="noopener noreferrer">Aviso de privacidade</a>.</p>'+
 '<input class="honeypot" name="site" id="site" tabindex="-1" autocomplete="off" aria-hidden="true">'+
 '<button id="send" class="primary" type="submit">'+'QUERO MINHA ESTRUTURAÇÃO'+'</button></form>';
 $('leadform').addEventListener('submit',submit);
@@ -174,8 +174,8 @@ return 'https://wa.me/'+window.COMERCIAL_WHATSAPP+'?text='+encodeURIComponent(te
 async function submit(ev){
 ev.preventDefault();if(busy||saved)return;if($('site').value)return;
 var nome=$('nome').value.trim(),empresa=$('empresa').value.trim(),tel=normalize($('telefone').value);
-if(nome.length<2||empresa.length<2||!tel||!$('consent').checked){error('Confira nome, empresa, telefone com DDD e consentimento.');return}
-var lead={id:captureId||undefined,nome:nome.slice(0,100),empresa:empresa.slice(0,120),whatsapp:tel,segmento:'Não informado',ja_anunciou:values.ja_anunciou,gargalo:values.gargalo,modalidade:values.modalidade,consentimento:true,pagina:location.pathname.slice(0,250)};
+if(nome.length<2||empresa.length<2||!tel){error('Confira seu nome, empresa e telefone com DDD.');return}
+var lead={id:captureId||undefined,nome:nome.slice(0,100),empresa:empresa.slice(0,120),whatsapp:tel,segmento:'Não informado',ja_anunciou:values.ja_anunciou,gargalo:values.gargalo,modalidade:values.modalidade,consentimento:false,base_legal:'solicitacao_contato',pagina:location.pathname.slice(0,250)};
 keys.forEach(function(k){var v='';try{v=sessionStorage.getItem('funil_'+k)||''}catch(e){}lead[k]=v?v.slice(0,k==='fbclid'||k==='gclid'?250:180):null});
 var b=$('send'),abort=new AbortController(),timeout=setTimeout(function(){abort.abort()},14000);
 busy=true;b.disabled=true;b.textContent='REGISTRANDO CADASTRO...';
