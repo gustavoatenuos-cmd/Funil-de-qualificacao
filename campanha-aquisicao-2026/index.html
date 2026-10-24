@@ -82,11 +82,12 @@ footer{display:flex;justify-content:space-between;align-items:center;gap:16px;bo
 
 </style>
 <script>
-window.META_PIXEL_ID = '';
+window.META_PIXEL_ID = '1147901471256861';
 window.COMERCIAL_WHATSAPP = '5543984222822'; // (43) 98422-2822
 if(!/^\d{14,16}$/.test(window.META_PIXEL_ID||'')){window.META_PIXEL_ID=''}
 if(window.META_PIXEL_ID){!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init',window.META_PIXEL_ID);fbq('track','PageView')}
 </script></head><body>
+<noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=1147901471256861&amp;ev=PageView&amp;noscript=1"></noscript>
 <div class="wrap"><header><span class="brand">AQUISIÇÃO <b>INTELIGENTE</b></span><span class="tagline">ESTRUTURA PARA EMPRESAS</span></header></div>
 <main class="wrap">
 <section id="hero" class="hero">
@@ -170,20 +171,9 @@ function normalize(p){var n=p.replace(/\D/g,'');if(n.indexOf('55')===0&&n.length
 function error(msg){$('err').textContent=msg;$('err').classList.add('visible')}
 function readable(key,value){var q=questions.find(function(x){return x.key===key});return (q.answers.find(function(x){return x[0]===value})||['',''])[1]}
 function createWhatsApp(lead){
-var experiencia={
-  atualmente:'Já invisto em tráfego pago atualmente.',
-  antes:'Já investi em tráfego pago, mas parei.',
-  nunca:'Ainda não investi em tráfego pago.'
-};
 var text=[
 'Olá! Me chamo '+lead.nome+' e sou da empresa '+lead.empresa+'.',
-'',
 'Conheci a proposta de estruturação de tráfego, funil e qualificação.',
-'',
-experiencia[lead.ja_anunciou] || readable('ja_anunciou',lead.ja_anunciou),
-'Meu principal desafio é: '+readable('gargalo',lead.gargalo)+'.',
-'Tenho interesse em: '+readable('modalidade',lead.modalidade)+'.',
-'',
 'Quero entender melhor a implantação para minha empresa. Podemos conversar?'
 ].join('\n');
 return 'https://wa.me/'+window.COMERCIAL_WHATSAPP+'?text='+encodeURIComponent(text)
