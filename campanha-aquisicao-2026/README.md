@@ -1,3 +1,14 @@
+## Integração comercial finalizada em 2026-10-24
+
+- Número de destino da captação: **(43) 98422-2822**, formato `5543984222822`.
+- O formulário salva nome, empresa, WhatsApp, histórico de anúncios, desafio, modalidade, consentimento e parâmetros UTM no Supabase.
+- Um gatilho `AFTER INSERT` em `public.leads_canal_aquisicao_2026` cria **empresa, contato, card comercial e nota** na conta proprietária do Larkan em **mesma transação**. Se falhar, o cadastro é revertido e o funil NÃO redireciona.
+- O contato recebe uma mensagem WhatsApp pré-preenchida, com o próprio nome, empresa e respostas, **após** confirmação de cadastro. O visitante deve tocar em **Enviar** no WhatsApp.
+- ID de submissão gerado no navegador e `resolution=ignore-duplicates` impedem duplicidade em reenvios após timeout.
+- O fluxo de reconciliação do Larkan continua como contingência. O card em produção aparece no pipeline mesmo sem a versão de menu especial de prévia.
+- Teste técnico executado no banco em uma transação com `SET LOCAL ROLE anon`, criação verificada e `ROLLBACK` (sem persistir contato fictício).
+- Configuração do Pixel Meta **ainda pendente**; não considere eventos Pixel validados antes de configurar a conta correta.
+
 # Aquisição Inteligente — Funil de Meta Ads (2026)
 
 Funil de qualificação mobile-first, em **HTML/CSS/JS estático**, com animação CSS/SVG leve na primeira dobra.
@@ -27,7 +38,7 @@ No começo do `index.html`, configure:
 
 ```js
 window.META_PIXEL_ID = '';       // Pixel Meta real (não inventar)
-window.COMERCIAL_WHATSAPP = '';  // ex. '5543999999999', apenas exemplo
+window.COMERCIAL_WHATSAPP = '5543984222822';  // (43) 98422-2822
 ```
 
 Não subir a campanha com Pixel incorreto ou WhatsApp sem destino comercial. Um envio salvo na base não é equivalente à conversa iniciada no WhatsApp.
