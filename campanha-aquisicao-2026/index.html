@@ -40,6 +40,14 @@ h1 em{font-style:normal;color:var(--coral)}
 @keyframes run{0%,7%{left:18%;opacity:0;transform:scale(.6)}13%{opacity:1}43%{left:49%;opacity:1;transform:scale(1)}68%{left:82%;opacity:1}76%,100%{left:82%;opacity:0;transform:scale(.5)}}
 .diagram-bottom{position:relative;margin-top:17px;font-size:11px;color:#64758c}.diagram-bottom strong{color:#344967}
 .node:last-child .nodeIcon:after{content:'R$';position:absolute;right:calc(50% - 48px);top:0;background:#dff3e7;color:#277450;border:1px solid #b8dfc9;font:800 10px Manrope,sans-serif;border-radius:12px;padding:3px 6px;box-shadow:0 3px 10px #17362a12}
+.sale-drop{position:absolute;inset:0;pointer-events:none;z-index:3}
+.sale-drop span{position:absolute;top:37px;font:800 11px Manrope,sans-serif;color:#26734e;background:#e7f5ed;border:1px solid #bde3ce;border-radius:9px;padding:2px 5px;opacity:0;box-shadow:0 5px 13px #235d3e15;animation:sale-fall 4.5s ease-in infinite}
+.sale-drop span:nth-child(1){left:18%;--dx:-13px;animation-delay:0s}
+.sale-drop span:nth-child(2){left:52%;--dx:12px;animation-delay:.15s}
+.sale-drop span:nth-child(3){left:36%;--dx:-3px;animation-delay:.32s}
+.sale-drop span:nth-child(4){left:69%;--dx:17px;animation-delay:.47s}
+@keyframes sale-fall{0%,64%{opacity:0;transform:translate(0,-11px) scale(.75)}70%{opacity:1;transform:translate(0,-2px) scale(1)}87%{opacity:.9;transform:translate(var(--dx),37px) rotate(12deg)}96%,100%{opacity:0;transform:translate(var(--dx),61px) rotate(22deg)}}
+@media(prefers-reduced-motion:reduce){.sale-drop span{animation:none!important;opacity:0!important}}
 .primary{width:100%;background:var(--coral);color:#fff;font:800 14px Manrope,sans-serif;min-height:55px;border:0;border-radius:12px;box-shadow:0 9px 22px #ad4b2926}
 .primary:hover{background:#a63f2d}
 .primary:focus-visible,.choice:focus-visible,.back:focus-visible,.whatsapp:focus-visible{outline:3px solid #6f9fce;outline-offset:3px}
@@ -85,12 +93,12 @@ if(window.META_PIXEL_ID){!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=functi
 <span class="badge">ESTRUTURA DE AQUISIÇÃO PARA EMPRESAS</span>
 <h1>Seus anúncios geram contatos, mas <em>poucos viram clientes?</em></h1>
 <p class="sub">Organizamos seus anúncios e o funil de qualificação para que os interessados cheguem ao WhatsApp com <strong>mais contexto sobre seu serviço.</strong></p>
-<div class="diagram" role="img" aria-label="Animação ilustrativa: anúncios levam ao funil de qualificação e ao WhatsApp">
+<div class="diagram" role="img" aria-label="Animação ilustrativa: tráfego, qualificação e WhatsApp; símbolos de reais representam oportunidades, não vendas confirmadas">
 <div class="caption">COMO FUNCIONA A ESTRUTURA</div>
 <div class="nodes"><i class="dot"></i><i class="dot second"></i>
 <div class="node"><div class="nodeIcon"><svg viewBox="0 0 32 32"><path d="M4 14h6L26 8v16L10 18H4z"/><path d="m10 19 3 8h5l-4-7"/></svg></div><b>Tráfego pago</b><small>Atrair interesse</small></div>
 <div class="node"><div class="nodeIcon"><svg viewBox="0 0 32 32"><path d="M4 6h24L19 17v8l-5 3V17z"/><path d="m10 12 6 4 6-4"/></svg></div><b>Funil</b><small>Qualificar</small></div>
-<div class="node"><div class="nodeIcon"><svg viewBox="0 0 32 32"><path d="M7 23 5 28l6-2a12 12 0 1 0-5-5z"/><path d="m12 12 3 4 6-6"/><path d="M23 20v7M20 23.5h7"/></svg></div><b>WhatsApp</b><small>Conversar melhor</small></div>
+<div class="node"><div class="nodeIcon"><svg viewBox="0 0 32 32"><path d="M7 23 5 28l6-2a12 12 0 1 0-5-5z"/><path d="m12 12 3 4 6-6"/><path d="M23 20v7M20 23.5h7"/></svg></div><div class="sale-drop" aria-hidden="true"><span>R$</span><span>R$</span><span>R$</span><span>R$</span></div><b>WhatsApp</b><small>Conversar melhor</small></div>
 </div><div class="diagram-bottom"><strong>Tráfego pago, funil e WhatsApp.</strong> Etapas conectadas até o atendimento.</div></div>
 <button class="primary" id="start" type="button">CONHECER A ESTRUTURA</button>
 <div class="hint">Implantação para sua equipe ou gestão pela nossa equipe.</div>
@@ -115,6 +123,15 @@ var questions=[
 {key:'modalidade',title:'Como prefere operar a estrutura?',sub:'Podemos implantar para sua equipe ou acompanhar a gestão.',answers:[['implantar','Implantação para minha equipe operar'],['gestao','Implantação com gestão contínua'],['avaliar','Quero entender qual opção é melhor']]}
 ];
 var $=function(id){return document.getElementById(id)},step=0,values={},busy=false,saved=false;
+var whatsappTracked=false,whatsappClicked=false;
+function trackWhatsAppClick(){
+ if(whatsappTracked)return;
+ whatsappTracked=true;
+ window.dataLayer=window.dataLayer||[];
+ window.dataLayer.push({event:'whatsapp_click',channel:'whatsapp',funnel:'aquisicao'});
+ if(typeof window.fbq==='function')window.fbq('trackCustom','WhatsAppClick',{channel:'whatsapp',funnel:'aquisicao'});
+}
+$('whatsapp-open').addEventListener('click',function(){whatsappClicked=true;trackWhatsAppClick()});
 // Mantém o mesmo UUID em tentativas após timeout, evitando cadastros duplicados.
 var captureId=window.crypto&&typeof window.crypto.randomUUID==='function'?window.crypto.randomUUID():null;
 if(!captureId&&window.crypto&&window.crypto.getRandomValues){
@@ -180,8 +197,17 @@ keys.forEach(function(k){var v='';try{v=sessionStorage.getItem('funil_'+k)||''}c
 var b=$('send'),abort=new AbortController(),timeout=setTimeout(function(){abort.abort()},14000);
 busy=true;b.disabled=true;b.textContent='REGISTRANDO CADASTRO...';
 try{
-var r=await fetch(db,{method:'POST',headers:{'apikey':apikey,'Content-Type':'application/json','Prefer':'resolution=ignore-duplicates,return=minimal'},body:JSON.stringify(lead),signal:abort.signal});
-if(!r.ok)throw Error('save_failed');
+var r=await fetch(db,{method:'POST',headers:{'apikey':apikey,'Content-Type':'application/json','Prefer':'return=minimal'},body:JSON.stringify(lead),signal:abort.signal});
+if(!r.ok){
+ var responseError={};
+ try{responseError=await r.json()}catch(parseError){}
+ var alreadySaved=r.status===409&&responseError.code==='23505'&&Boolean(captureId);
+ if(!alreadySaved){
+   var failure=new Error('Falha ao registrar. HTTP '+r.status+(responseError.code?' ('+responseError.code+')':''));
+   failure.status=r.status;
+   throw failure;
+ }
+}
 saved=true;
 window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'lead_qualificado',modalidade:lead.modalidade,origem:'meta_aquisicao'});
 if(typeof window.fbq==='function')window.fbq('track','Lead');
@@ -189,12 +215,24 @@ show('success');
 if(businessPhone()){
 var link=createWhatsApp(lead);$('whatsapp-open').href=link;$('whatsapp-open').style.display='block';
 $('success-copy').textContent='Cadastro registrado! Seu WhatsApp será aberto com uma mensagem personalizada. Confira o texto e toque em Enviar para iniciar a conversa.';
-window.dataLayer.push({event:'whatsapp_redirecionamento',origem:'meta_aquisicao'});
-setTimeout(function(){window.location.assign(link)},1200)
+// O evento de WhatsApp é registrado só na tentativa de abrir a conversa.
+setTimeout(function(){
+ if(whatsappClicked)return;
+ trackWhatsAppClick();
+ window.location.assign(link);
+},1200)
 }else{
 $('success-copy').textContent='Seu cadastro foi salvo com segurança. Nossa equipe poderá entrar em contato no WhatsApp informado. O redirecionamento automático ainda está em configuração.'
 }
-}catch(e){error('Não foi possível enviar agora. Confira sua internet e tente novamente.')}
+}catch(e){
+ console.error('[funil] erro de cadastro:',e&&e.message?e.message:'desconhecido');
+ var msg=e&&e.status===401?
+   'O cadastro não foi autorizado pelo servidor. Atualize a página e tente novamente.':
+   e&&e.name==='AbortError'?
+   'A conexão demorou a responder. Tente novamente; seu cadastro não será duplicado.':
+   'Não foi possível salvar seu cadastro. Tente novamente. Se continuar, informe o erro ao atendimento.';
+ error(msg);
+}
 finally{clearTimeout(timeout);busy=false;b.disabled=false;b.textContent='QUERO MINHA ESTRUTURAÇÃO'}
 }
 $('start').addEventListener('click',function(){step=0;render()});

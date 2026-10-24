@@ -1,3 +1,12 @@
+## Correções de envio e mensuração — 2026-10-24
+
+- **Correção HTTP 401:** retirado o cabeçalho `Prefer: resolution=ignore-duplicates`. Nos registros reais do Supabase, as tentativas com esse cabeçalho retornavam 401; a inserção anterior com `Prefer: return=minimal` retornou 201. O cadastro continua usando apenas INSERT autorizado pela RLS.
+- **Reenvio seguro:** o formulário mantém o mesmo UUID durante a sessão e, se receber `409 / 23505` na repetição desse UUID, considera o cadastro já registrado. Não usa UPSERT nem libera leitura pública.
+- **WhatsApp:** apenas depois da confirmação de salvamento o site apresenta um link e tenta abrir o WhatsApp. A mensagem é preenchida, e a pessoa deve apertar Enviar no aplicativo. O link visível permanece como alternativa em navegadores que bloquearem o redirecionamento automático.
+- **Pixel Meta:** `PageView` no carregamento, quando houver ID de pixel; `Lead` depois da confirmação do banco; `WhatsAppClick` (evento personalizado) na tentativa de abrir a conversa, uma vez por visita ao fluxo. Clique não é confirmação de envio nem venda. Não use `Purchase` para os símbolos R$ animados.
+- Para habilitar pixel, preencher `window.META_PIXEL_ID` no início de `index.html` com o ID autorizado e conferir o Gerenciador de Eventos / Testar eventos. **Não inventar o ID** e revisar a configuração de privacidade aplicável antes de ativá-lo.
+- Animação ilustrativa do bloco final mostra símbolos R$ descendentes, sem associar valores ou faturamento fictício.
+
 ## Integração comercial finalizada em 2026-10-24
 
 - Número de destino da captação: **(43) 98422-2822**, formato `5543984222822`.
